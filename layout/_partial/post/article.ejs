@@ -1,0 +1,16 @@
+<div class="article">
+    <div>
+        <h1 class="title"><%- page.title %></h1>
+        <div class="stuff">
+            <span><%- page.date.locale("zh-cn").format("MMMM DD, YYYY") %></span>
+        </div>
+        <div class="content markdown">
+            <%- page.content %>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="<%- theme.autoplay || "false" %>">
+                <source type="audio/mpeg" src="<%- page.mp3 || theme.mp3 %>">
+            </audio>
+        </div>
+        <!--<div class="comment link">添加评论</div>-->
+    </div>
+</div>

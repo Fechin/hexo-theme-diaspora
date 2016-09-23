@@ -1,0 +1,11 @@
+<%- partial("_partial/menu", null, {cache: true}) %>
+<div id="container">
+    <%- partial("_partial/screen", null, {cache: true}) %>
+    <div id="primary">
+        <%- partial('_partial/list', {start: 1}) %>
+    </div>
+    <% if (page.total > 1 && page.next_link){ %>
+    <div id="pager"><a href="<%- url_for(page.next_link) %>" class="more">加载更多</a></div>
+    <% } %>
+</div>
+<div id="preview" class="trans"></div>

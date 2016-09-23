@@ -1,0 +1,8 @@
+<%
+    page.posts.sort("date", "desc").each(function(post, i){
+    if (page.prev == 0 && i < start) {
+        return true;
+    }
+%>
+<%- partial('post/item', {post: post}) %>
+<% }) %>

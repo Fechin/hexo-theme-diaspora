@@ -1,0 +1,15 @@
+<div class="nav">
+    <ul id="menu-menu" class="menu">
+        <% for (var i in theme.menu){ %>
+        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
+            <%- link_to(url_for(theme.menu[i]), i)%>
+        </li>
+        <%}%>
+    </ul>
+    <p>
+        &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>.
+        Powered by <%- link_to("http://hexo.io/", "Hexo", {external: true})%>
+        Theme <%- link_to("https://github.com/Fechin/diaspora", "Diaspora", {external: true})%>
+        by Fechin
+    </p>
+</div>
