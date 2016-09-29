@@ -479,18 +479,6 @@ $(function() {
                 return false;
                 break;
 
-            // relate post
-            case (tag.indexOf('relatea') != -1):
-                Diaspora.HS($(e.target), 'replace')
-                return false;
-                break;
-
-            // relate post
-            case (tag.indexOf('relateimg') != -1):
-                Diaspora.HS($(e.target).parent(), 'replace')
-                return false;
-                break;
-
             // prev, next post
             case (rel == 'prev' || rel == 'next'):
                 if (rel == 'prev') {
