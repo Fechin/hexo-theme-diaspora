@@ -3,11 +3,12 @@
 
 **[在线预览 | PREVIEW ](http://fech.in)**
 
-一款基于WP移植的Hexo主题，适合喜欢摄影，影评，乐评和玩弄文字的你，干净，清新； 响应式，Ajax，更多好玩的等你来发现。
-再次感谢原作者创作出这么精美的主题  @Loeify 。
+一款基于WP移植的Hexo主题，适合喜欢摄影，影评，乐评和玩弄文字的你，干净，清新； 响应式，Ajax，更多好玩的等你来发现。 
+
+> 再次感谢原作者创作出这么精美的主题 @Loeify 。如果你喜欢，请捐助原作者。
 
 预览图
-![theme-preview](http://odwjyz4z6.bkt.clouddn.com/diaspore-theme/screen/http___fech.in__mini%20%281%29%20%281%29.jpg)
+![preview](http://ww4.sinaimg.cn/large/801b780agw1f8p9f5tcxtj21kw3nkk9b.jpg)
 
 
 
