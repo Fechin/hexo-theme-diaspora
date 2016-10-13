@@ -5,7 +5,7 @@
 
 一款基于WP移植的Hexo主题，适合喜欢摄影，影评，乐评和玩弄文字的你，干净，清新； 响应式，Ajax，更多好玩的等你来发现。 
 
-> 再次感谢原作者创作出这么精美的主题 @Loeify 。如果你喜欢，请捐助原作者。
+> 再次感谢原作者创作出这么精美的主题 [@Loeify](https://github.com/LoeiFy/Diaspora) 。如果你喜欢，请捐助原作者。
 
 预览图
 ![preview](http://i.imgur.com/7iybyqy.jpg)
