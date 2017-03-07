@@ -72,7 +72,15 @@ cover: /img/cover.jpg
 keywords:
 # 要使用google_analytics进行统计的话，这里需要配置ID
 google_analytics: 
+# 多说系统站点名称
+duoshuo_shortname: 
 # 网站ico
 favicon: /img/favicon.png
 rss: atom.xml
 ```
+`注意：1.多说评论需配置duoshuo_shortname，为空时不显示查看评论按钮。2.多说评论以文章path作为key，更换文章path后之前的评论会丢失。`
+
+### 更新日志
+- 23 Sep 2016 项目启动
+- 13 Oct 2016 V1.0发布
+- 07 Mar 2017 添加多说评论支持
