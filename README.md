@@ -78,7 +78,7 @@ duoshuo_shortname:
 favicon: /img/favicon.png
 rss: atom.xml
 ```
-`注意：多说评论功能，需配置duoshuo_shortname，为空时不显示评论`
+`注意：1.多说评论需配置duoshuo_shortname，为空时不显示查看评论按钮。2.多说评论以文章path作为key，更换文章path后之前的评论会丢失。`
 
 ### 更新日志
 - 23 Sep 2016 项目启动
