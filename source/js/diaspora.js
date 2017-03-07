@@ -504,7 +504,8 @@ $(function() {
                 break;
 
 				// comment
-			case - 1 != tag.indexOf("comment") : Diaspora.loading(),
+			case - 1 != tag.indexOf("comment") && - 1 != tag.indexOf("link"):
+                Diaspora.loading();
 				$(".comment").removeClass("link").html("");
 				var id = $(".comment").data("id"),
 				    title = $(".comment").data("title"),
