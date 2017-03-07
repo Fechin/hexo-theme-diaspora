@@ -76,3 +76,8 @@ google_analytics:
 favicon: /img/favicon.png
 rss: atom.xml
 ```
+
+### 更新日志
+- 23 Sep 2016 项目启动
+- 13 Oct 2016 V1.0发布
+- 07 Mar 2017 添加多说评论支持
