@@ -412,13 +412,13 @@ $(function() {
                     return
                 }
 
-                tag.html('加载中..').data('status', 'loading')
+                tag.html('åŠ è½½ä¸­..').data('status', 'loading')
                 Diaspora.loading()
 
                 Diaspora.L(tag.attr('href'), function(data) {
                     var link = $(data).find('.more').attr('href');
                     if (link != undefined) {
-                        tag.attr('href', link).html('加载更多').data('status', 'loaded')
+                        tag.attr('href', link).html('åŠ è½½æ›´å¤š').data('status', 'loaded')
                         tag.data('page', parseInt(tag.data('page')) + 1)
                     } else {
                         $('#pager').remove()
@@ -428,7 +428,7 @@ $(function() {
 
                     Diaspora.loaded()
                 }, function() {
-                    tag.html('加载更多').data('status', 'loaded')
+                    tag.html('åŠ è½½æ›´å¤š').data('status', 'loaded')
                 })
 
                 return false;
@@ -502,6 +502,30 @@ $(function() {
 
                 return false;
                 break;
+
+				// comment
+			case - 1 != tag.indexOf("comment") : Diaspora.loading(),
+				$(".comment").removeClass("link").html("");
+				var id = $(".comment").data("id"),
+				    title = $(".comment").data("title"),
+				    url = $(".comment").data("url"),
+				    shortname = $(".comment").data("shortname");
+                window.duoshuoQuery = {short_name: shortname};
+				var f = function() {
+					var a = document.createElement("div");
+					a.setAttribute("data-thread-key", id);
+					a.setAttribute("data-title", title);
+					a.setAttribute("data-url", url);
+					DUOSHUO.EmbedThread(a);
+					$(".comment").html(a);
+					Diaspora.loaded();
+				};
+				window.DUOSHUO ? f() : $.getScript("http://static.duoshuo.com/embed.js",
+				function() {
+					f()
+				});
+				return false;
+				break;
 
             default:
                 return;
