@@ -521,7 +521,7 @@ $(function() {
                 a.setAttribute("data-url", url);
                 DUOSHUO.EmbedThread(a);
                 $(".comment").html(a);
-                $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
+                $('html,body').animate({scrollTop: document.body.scrollHeight - 30},"slow");
                 Diaspora.loaded();
             };
             window.DUOSHUO ? f() : $.getScript("http://static.duoshuo.com/embed.js",
