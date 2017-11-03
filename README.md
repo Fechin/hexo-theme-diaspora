@@ -8,7 +8,7 @@
 > 再次感谢原作者创作出这么精美的主题 [@Loeify](https://github.com/LoeiFy/Diaspora) 。如果你喜欢，请捐助原作者。
 
 预览图
-![preview](http://i.imgur.com/7iybyqy.jpg)
+![preview](http://odwjyz4z6.bkt.clouddn.com/indexfech.in.preview.jpg)
 
 
 
