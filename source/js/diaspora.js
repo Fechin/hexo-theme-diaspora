@@ -391,6 +391,7 @@ $(function() {
             case (tag.indexOf('switchmenu') != -1):
                 window.scrollTo(0, 0)
                 $('html, body').toggleClass('mu');
+                $('#copyright').toggleClass('show');
 
                 break;
 
