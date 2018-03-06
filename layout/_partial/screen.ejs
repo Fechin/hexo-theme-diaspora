@@ -2,7 +2,7 @@
 <div id="screen">
     <div id="mark">
         <div class="layer" data-depth="0.4">
-            <%- image_tag(theme.welcome_cover || first.cover, {id: "cover", crossorigin: "anonymous", width: 1920, height: 1080}) %>
+            <%- image_tag(theme.welcome_cover || first.cover || "/img/welcome_cover.jpg", {id: "cover", crossorigin: "anonymous", width: 1920, height: 1080}) %>
         </div>
     </div>
     <div id="vibrant">
