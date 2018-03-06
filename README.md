@@ -40,6 +40,7 @@ git pull
 ### 新建文章模板
 
 ``` markdown
+---
 title: My awesome title
 date: 2016-10-12 18:38:45
 tags: 
