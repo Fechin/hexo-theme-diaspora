@@ -72,8 +72,6 @@ cover: /img/cover.jpg
 keywords:
 # 要使用google_analytics进行统计的话，这里需要配置ID
 google_analytics: 
-# 多说系统站点名称
-duoshuo_shortname: 
 # 网站ico
 favicon: /img/favicon.png
 rss: atom.xml
@@ -83,4 +81,4 @@ rss: atom.xml
 ### 更新日志
 - 23 Sep 2016 项目启动
 - 13 Oct 2016 V1.0发布
-- 07 Mar 2017 添加多说评论支持
+- 6 Mar 2018 版权信息，封面图优化
