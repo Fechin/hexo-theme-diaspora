@@ -18,8 +18,6 @@ cover: /img/cover.jpg
 keywords: Fechin 
 # 要使用google_analytics进行统计的话，这里需要配置ID
 google_analytics: UA-69833742-2
-# 多说系统站点名称
-duoshuo_shortname: fechin
 # 网站ico
 favicon: /img/favicon.png
 rss: atom.xml

@@ -504,34 +504,6 @@ $(function() {
                 return false;
                 break;
 
-            // comment
-        case - 1 != tag.indexOf("comment") && -1 != tag.indexOf("link") :
-			Diaspora.loading();
-            $(".comment").removeClass("link").html("");
-            var id = $(".comment").data("id"),
-            title = $(".comment").data("title"),
-            url = $(".comment").data("url"),
-            shortname = $(".comment").data("shortname");
-            window.duoshuoQuery = {
-                short_name: shortname
-            };
-            var f = function() {
-                var a = document.createElement("div");
-                a.setAttribute("data-thread-key", id);
-                a.setAttribute("data-title", title);
-                a.setAttribute("data-url", url);
-                DUOSHUO.EmbedThread(a);
-                $(".comment").html(a);
-                $('html,body').animate({scrollTop: document.body.scrollHeight - 70},"slow");
-                Diaspora.loaded();
-            };
-            window.DUOSHUO ? f() : $.getScript("http://static.duoshuo.com/embed.js",
-            function() {
-                f()
-            });
-            return false;
-            break;
-
             default:
                 return;
                 break;
