@@ -27,8 +27,7 @@ audio {display:none;visibility:hidden;opacity:0;width:0;height:0;}
 #header {position:absolute;top:70px;width:100%;}
 #header > div {margin:0 60px;position:relative;}
 .icon-menu {font-size:20px;padding:6px 6px 5px;border-radius:2px;cursor:pointer;position:absolute;z-index:4;right:0;top:0;margin-top:-3px;background:rgba(255,255,255,.9);}
-.icon-logo {display:inline-block;color:#fff;font-size:26px;position:relative;z-index:4;}
-.image-logo {z-index:4;position:relative;display:inline-block;-webkit-background-size:75px 32px;-moz-background-size:75px 32px;background-size:75px 32px;background-repeat:no-repeat;background-position:center center;-webkit-mask-box-image:url("/img/logo.png");background-color:white;width:75px;height:32px;}
+.image-logo {z-index:4;position:relative;display:inline-block;-webkit-background-size:75px 32px;-moz-background-size:75px 32px;background-size:75px 32px;background-repeat:no-repeat;background-position:center center;-webkit-mask-box-image:url("/img/logo.png");background-color:white;width:75px;height:32px;mask-image: url("/img/logo.png");mask-size: contain;}
 body.mu .image-logo {background-color:black;}
 #vibrant {position:absolute;top:0;left:0;width:100%;height:100%;}
 #vibrant div {position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;background-color:#000;}
