@@ -177,6 +177,8 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
   #post0 .summary {display:none;}
   .stuff span {margin-right:10px;}
   .stuff span:first-child {display:none;}
+  .content table{font-size:smaller;}
+  .content table tr td{padding: 6px;}
 }
 
 /* Icon font style */
@@ -215,7 +217,7 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
 .content pre code {background:none;text-shadow:none;padding:0;}
 .content blockquote {color:#aaa;margin:2.5rem 0.3rem;padding:0 0 0 30px;border-left:3px solid #cccaca;}
 .content blockquote p {margin:0;}
-.content table {margin:15px 0;border-collapse:collapse;}
+.content table{margin:15px 0;border-collapse:collapse;display: table;width: 100%;table-layout: fixed;word-wrap: break-word;}
 .content table tr {border-top:1px solid #ccc;background-color:#fff;}
 .content table th,.content table td {border:1px solid #ddd;padding:6px 13px;}
 .content .highlight pre {border:none;margin:0;padding:0;}
