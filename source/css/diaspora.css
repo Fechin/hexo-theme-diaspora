@@ -220,7 +220,7 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
 .content code,.content pre {font-family:"Source Code Pro",monospace}
 .content code {background:rgba(0,0,0,0.07);color:#EB298C;padding:1px 2px;border-radius:2px;}
 .content pre code {background:none;text-shadow:none;padding:0;}
-.content blockquote {color: #656565;margin: 0 0 1.1em;border-left: 3px solid #d4d3d3;border-left-width: 8px;background-color: rgba(102,128,153,0.05);border-top-right-radius: 5px;border-bottom-right-radius: 5px;padding: 15px 20px;}
+.content blockquote {color: #656565;margin: 0 0 1.1em;border-left: 3px solid #efefef;border-left-width: 6px;background-color: rgba(119, 119, 119, 0.05);border-top-right-radius: 5px;border-bottom-right-radius: 5px;padding: 15px 20px;}
 .content blockquote p {margin:0;}
 .content table{margin:15px 0;border-collapse:collapse;display: table;width: 100%;table-layout: fixed;word-wrap: break-word;}
 .content table tr {border-top:1px solid #ccc;background-color:#fff;}
