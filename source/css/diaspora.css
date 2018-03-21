@@ -18,8 +18,6 @@ body {font-family:"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","We
 a,a:hover {text-decoration:none;}
 img {display:block;max-width:100%;height:auto;}
 audio {display:none;visibility:hidden;opacity:0;width:0;height:0;}
-.hide{display:none;}
-.show{display:block;}
 #screen {position:relative;}
 #mark {width:100%;height:560px;overflow:hidden;}
 .layer {position:relative;}
@@ -116,13 +114,8 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
 .stuff .count {color:#666;}
 .comment {margin:50px auto 0;}
 .comment.link,.downloadlink {cursor:pointer;letter-spacing:5px;border:1px solid #dadada;width:170px;text-align:center;color:#666;font-size:14px;padding:10px 0;}
-#preview {position:fixed;top:0;width:100%;height:100%;z-index:5;background:#fff;left:100%;-moz-transition:all 0.3s cubic-bezier(0.25,0.5,0.5,0.9);-webkit-transition:all 0.3s cubic-bezier(0.25,0.5,0.5,0.9);transition:all 0.3s cubic-bezier(0.25,0.5,0.5,0.9);overflow-y:scroll;}
-#preview.trans {left:auto;transform:translateX(100%);-webkit-transform:translateX(100%);-moz-transform:translateX(100%);}
+#preview{position:fixed;top:0;width:100%;height:100%;z-index:5;background:#fff;left:100%;-moz-transition:all 0.3s cubic-bezier(0,0,0.2,1);-webkit-transition:all 0.3s cubic-bezier(0,0,0.2,1);transition:all 0.3s cubic-bezier(0,0,0.2,1);overflow-y:scroll;}
 #preview.show {left:0;}
-#preview.trans.show {left:auto;transform:translateX(0);-webkit-transform:translateX(0);-moz-transform:translateX(0);}
-.alignleft {float:left;}
-.alignright {float:right;}
-.aligncenter {display:block;margin-left:auto;margin-right:auto;}
 #preview + canvas {display:none;}
 
 /* Responsive style */

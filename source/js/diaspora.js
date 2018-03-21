@@ -59,11 +59,11 @@ var Diaspora = {
             if (state.u == Home) {
                 $('#preview').css('position', 'fixed')
                 setTimeout(function() {
-                    $('#preview').removeClass('show').addClass('trans')
-                    $('#container').show()
-                    window.scrollTo(0, parseInt($('#container').data('scroll')))
+                    $('#preview').removeClass('show');
+                    $('#container').show();
+                    window.scrollTo(0, parseInt($('#container').data('scroll')));
                     setTimeout(function() {
-                        $('#preview').html('')
+                        $('#preview').html('');
                         $(window).trigger('resize')
                     }, 300)
                 }, 0)
@@ -152,7 +152,7 @@ var Diaspora = {
                     $('#preview').css({
                         'position': 'static',
                         'overflow-y': 'auto'
-                    }).removeClass('trans')
+                    });
                     $('#top').show()
 
                     Diaspora.loaded()
