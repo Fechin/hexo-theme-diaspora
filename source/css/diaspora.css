@@ -80,7 +80,7 @@ body.touch #top {position:relative;}
 .bar {position:absolute;height:100%;background:rgba(0,0,0,.07);z-index:-1;width:0;-webkit-transition:width .5s ease;-moz-transition:width .5s ease;transition:width .5s ease;}
 .scrollbar {position:absolute;height:2px;width:30px;top:0;background-color:#50bcb6;-webkit-transition:width .5s ease;-moz-transition:width .5s ease;transition:width .5s ease;}
 body.touch .scrollbar {display:none;}
-.nav {position:fixed;height:100%;width:100%;background:rgba(255,255,255,.97);z-index:3;top:-100%;-webkit-transition:top 0.3s cubic-bezier(0.25,0.5,0.5,0.9);-moz-transition:top 0.3s cubic-bezier(0.25,0.5,0.5,0.9);transition:top 0.3s cubic-bezier(0.25,0.5,0.5,0.9);}
+.nav{position:fixed;height:100%;width:100%;background:rgba(255,255,255,.97);z-index:3;top:-100%;-webkit-transition:top 0.3s cubic-bezier(0.4,0,0.2,1);-moz-transition:top 0.3s cubic-bezier(0.4,0,0.2,1);transition:top 0.3s cubic-bezier(0.4,0,0.2,1);}
 body.mu {overflow:hidden;height:100%;}
 html.mu {height:100%;}
 body.mu .icon-menu {color:#333;}
