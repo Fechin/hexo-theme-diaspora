@@ -143,22 +143,27 @@ var Diaspora = {
     },
 
     preview: function() {
-        setTimeout(function() {
-            $('#preview').addClass('show')
-            $('#container').data('scroll', window.scrollY)
-            setTimeout(function() {
-                $('#container').hide()
-                setTimeout(function() {
-                    $('#preview').css({
-                        'position': 'static',
-                        'overflow-y': 'auto'
-                    });
-                    $('#top').show()
+        // preview toggle
+        $("#preview").one('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
+            var left = $('#preview').css('left');
+            if (left == '0px') {
+                $('#container').hide();
+            }else{
+                $('#container').show();
+            }
+            Diaspora.loaded();
+        });
 
-                    Diaspora.loaded()
-                }, 500)
-            }, 300)
-        }, 0)
+        setTimeout(function() {
+            $('#preview').addClass('show');
+            $('#container').data('scroll', window.scrollY);
+            setTimeout(function() {
+                $('#preview').css({
+                    'position': 'static',
+                    'overflow-y': 'auto'
+                });
+            }, 500);
+        }, 0);
     },
 
     player: function() {
