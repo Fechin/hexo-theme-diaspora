@@ -34,6 +34,6 @@ var description = '';
     <% if (config.author){ %><meta name="author" content="<%= config.author %>"> <% } %>
     <% if (theme.rss){ %><link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml"> <% } %>
     <% if (theme.favicon){ %><link rel="icon" href="<%- url_for(theme.favicon) %>"> <% } %>
-    <%- css(['css/diaspora'])%>
+    <%- css(['css/diaspora.css'])%>
 
 </head>
