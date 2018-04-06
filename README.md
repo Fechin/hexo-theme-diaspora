@@ -81,3 +81,4 @@ rss: atom.xml
 - 23 Sep 2016 项目启动
 - 13 Oct 2016 V1.0发布
 - 6 Mar 2018 版权信息，封面图优化
+- Apr 6, 2018 集成PhotoSwipe图片插件
