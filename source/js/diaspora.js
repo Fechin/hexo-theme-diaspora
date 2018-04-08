@@ -98,9 +98,7 @@ var Diaspora = {
             }
             setTimeout(function() {
                 Diaspora.player()
-                if (flag == 'replace') {
-                    $('#top').show()
-                }
+                    $('#top').show();
             }, 0)
         })
     },
