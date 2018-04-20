@@ -413,6 +413,7 @@ $(function() {
                     var options = {
                         index: index,
                         shareEl: false,
+                        zoomEl: false,
                         allowRotationOnUserZoom: true,
                         history: false,
                         getThumbBoundsFn: function(index) {
