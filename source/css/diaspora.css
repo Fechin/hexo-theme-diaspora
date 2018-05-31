@@ -205,8 +205,8 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
 .content hr{margin-top:21px;margin-bottom:21px;border:0;border-top:1px solid rgba(102,128,153,0.1)}
 .content p{margin: 0 0 .8em;}
 .content ul,.content ol {margin:10px 0;padding-left:20px;}
-.content ul li {list-style:disc;}
-.content ol li {list-style:decimal;}
+.content ul li {list-style:disc;margin: 5px 0;}
+.content ol li {list-style:decimal;margin: 5px 0;}
 .content > h1,.content > h2,.content > h3,.content > h4,.content > h5,.content > h6 {margin-top:2rem;margin-bottom:0.8rem;color:#000;}
 .content > h1:first-child,.content > h2:first-child,.content > h3:first-child,.content > h4:first-child,.content > h5:first-child,.content > h6:first-child {margin-top:0;}
 .content img {cursor:pointer;}
