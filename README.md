@@ -7,8 +7,7 @@
 
 > 再次感谢原作者创作出这么精美的主题 [@Loeify](https://github.com/LoeiFy/Diaspora) 。如果你喜欢，请捐助原作者。
 
-预览图
-<img src="http://odwjyz4z6.bkt.clouddn.com/index/fech.in.preview.jpg" width="50%" height="50%" />
+![cover](http://odwjyz4z6.bkt.clouddn.com/Hexo-diaspora-cover.jpg)
 
 
 ### 安装主题
@@ -54,13 +53,13 @@ cover: http://domain.com/awesome.jpg
 
 # Header Menu. title: link
 menu:
-  About: /about
+  Whoami: /whoami
   Github: https://github.com/Fechin
   Twitter: https://twitter.com/FechinLi
 
 
 # 查看文章时是否自动播放音乐
-autoplay: true
+autoplay: false
 # 博客文章默认音乐, 优先级: 1.文章头mp3参数> 2.在这里配置
 mp3: http://link.hhtjim.com/163/425570952.mp3
 # 首页封面图, 优先级: 1.在这里配置> 2.文章头cover参数;
@@ -69,7 +68,7 @@ welcome_cover: # /img/welcome-cover.jpg
 cover: /img/cover.jpg
 
 
-keywords:
+keywords: Fechin
 # 要使用google_analytics进行统计的话，这里需要配置ID
 google_analytics: 
 # 网站ico
