@@ -3,6 +3,7 @@
         <h1 class="title"><%- page.title %></h1>
         <div class="stuff">
             <span><%- page.date.locale("zh-cn").format("MMMM DD, YYYY") %></span>
+            <%- partial('_partial/post/tag', {post: page}) %>
         </div>
         <div class="content markdown">
             <%- page.content %>
