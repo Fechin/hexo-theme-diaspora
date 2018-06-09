@@ -193,7 +193,7 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
 .icon-email:before {content:"\e60c";}
 
 /* tags style  */
-.post-tags-list {margin-top:10px; margin-bottom:80px}
+.post-tags-list {margin-top:10px; display:table;}
 .post-tags-list-item {float:left; margin-right:10px;background:rgba(102,128,153,0.075);border-radius:0;padding:2px 5px;}
 .post-tags-list-link {color:rgba(44,63,81,0.5);pointer-events:none;}
 
