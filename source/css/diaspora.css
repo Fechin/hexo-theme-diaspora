@@ -139,7 +139,7 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
   .post {width:100%;margin-top:60px;background:#fff;padding-bottom:30px;border-bottom:1px solid #eaeaea;}
   .post > a {display:block;margin:0 auto;width:100%;height:auto;}
   .post > a img {margin:0 auto;}
-  .else {height:auto;position:static;width:96%;margin:0 auto;background:transparent;border:none;}
+  .else {height:auto;position:static;width:100%;margin:0 auto;background:transparent;border:none;}
   .else p:first-child {margin:30px 0 0 20px;}
   .else h3 {font-size:24px;margin:10px 30px 0 20px;}
   .else h3 + p {margin:10px 30px 0 20px;}
