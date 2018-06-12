@@ -272,13 +272,13 @@ $(function() {
     }
     $(window).on('scroll', function() {
         if ($('.scrollbar').length && !Diaspora.P() && !$('.icon-images').hasClass('active')) {
-            var st = $(window).scrollTop(),
-                ct = $('.content').height();
-            if (st > ct) {
-                st = ct
-            }
-            $('.scrollbar').width((50 + st) / ct * 100 +'%')
-            if (st > 80 && window.innerWidth > 800) {
+            var wt = $(window).scrollTop(),
+                tw  = $('#top').width(),
+                dh = document.body.scrollHeight,
+                wh  = $(window).height();
+            var width = tw / (dh - wh) * wt;
+            $('.scrollbar').width(width)
+            if (wt > 80 && window.innerWidth > 800) {
                 $('.subtitle').fadeIn()
             } else {
                 $('.subtitle').fadeOut()

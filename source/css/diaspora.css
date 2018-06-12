@@ -75,7 +75,7 @@ body.touch #top {position:relative;}
 .social > div {display:inline-block;font-size:20px;color:#666;cursor:pointer;margin-left:15px;}
 #qr {z-index:10;display:none;position:absolute;background:#fff;padding:16px;border:1px solid #f7f7f7;right:10px;top:50px;}
 .bar {position:absolute;height:100%;background:rgba(0,0,0,.07);z-index:-1;width:0;-webkit-transition:width .5s ease;-moz-transition:width .5s ease;transition:width .5s ease;}
-.scrollbar {position:absolute;height:2px;width:30px;top:0;background-color:#50bcb6;-webkit-transition:width .5s ease;-moz-transition:width .5s ease;transition:width .5s ease;}
+.scrollbar {position:absolute;height:2px;width:10px;top:0;background-color:#50bcb6;-webkit-transition:width .5s ease;-moz-transition:width .5s ease;transition:width .5s ease;}
 body.touch .scrollbar {display:none;}
 .nav{position:fixed;height:100%;width:100%;background:rgba(255,255,255,.97);z-index:3;top:-100%;-webkit-transition:top 0.3s cubic-bezier(0.4,0,0.2,1);-moz-transition:top 0.3s cubic-bezier(0.4,0,0.2,1);transition:top 0.3s cubic-bezier(0.4,0,0.2,1);}
 body.mu {overflow:hidden;height:100%;}
@@ -230,6 +230,8 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
 .content .highlight figcaption a {float:right;}
 .content .highlight .gutter pre {text-align:right;padding-right:20px;}
 .content .highlight .line {height:20px;}
+.content .video-container{position:relative;padding-bottom:56.25%;padding-top:25px;height:0;}
+.content .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
 pre .comment,pre .title {color:#999;}
 pre .variable,pre .attribute,pre .tag,pre .regexp,pre .ruby .constant,pre .xml .tag,pre .title,pre .xml .pi,pre .xml .doctype,pre .html .doctype,pre .css .id,pre .css .class,pre .css .pseudo {color:#f2777a;}
 pre .number,pre .preprocessor,pre .built_in,pre .literal,pre .params,pre .constant {color:#f99157;}

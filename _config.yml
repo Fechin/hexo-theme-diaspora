@@ -1,8 +1,8 @@
 # Header Menu. title: link
 menu:
-  whoami: /whoami
-  github: https://github.com/Fechin
-  twitter: https://twitter.com/FechinLi
+  Whoami: /whoami
+  Github: https://github.com/Fechin
+  Twitter: https://twitter.com/FechinLi
 
 
 # 查看文章时是否自动播放音乐
