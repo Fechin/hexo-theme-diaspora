@@ -13,6 +13,8 @@ mp3: http://link.hhtjim.com/163/425570952.mp3
 welcome_cover: # /img/welcome-cover.jpg
 # 文章封面图, 优先级: 1.文章头cover参数 > 2.在这里配置
 cover: /img/cover.jpg
+# 文章目录
+TOC: false
 
 
 keywords: Fechin 
