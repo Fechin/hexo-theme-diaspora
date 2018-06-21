@@ -336,6 +336,7 @@ $(function() {
                 break;
             // home
             case (tag.indexOf('icon-home') != -1):
+                $('.toc').fadeOut(100);
                 if ($('#preview').hasClass('show')) {
                     history.back();
                 } else {
@@ -382,11 +383,27 @@ $(function() {
                 Diaspora.HS($(e.target), 'replace')
                 return false;
                 break;
+            // toc
+            case (tag.indexOf('toc-text') != -1 || tag.indexOf('toc-link') != -1
+                  || tag.indexOf('toc-number') != -1):
+                hash = '';
+                if (e.target.nodeName == 'SPAN'){
+                  hash = $(e.target).parent().attr('href')
+                }else{
+                  hash = $(e.target).attr('href')
+                }
+                to  = $("a.headerlink[href='" + hash + "']")
+                $("html,body").animate({
+                  scrollTop: to.offset().top - 50
+                }, 300);
+                return false;
+                break;
             // quick view
             case (tag.indexOf('pviewa') != -1):
                 $('body').removeClass('mu')
                 setTimeout(function() {
                     Diaspora.HS($(e.target), 'push')
+                    $('.toc').fadeIn(1000);
                 }, 300)
                 return false;
                 break;
