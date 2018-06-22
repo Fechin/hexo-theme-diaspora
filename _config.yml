@@ -1,25 +1,51 @@
-# Header Menu. title: link
+# 头部菜单，title: link
 menu:
   Whoami: /whoami
   Github: https://github.com/Fechin
   Twitter: https://twitter.com/FechinLi
 
-
-# 查看文章时是否自动播放音乐
-autoplay: false
-# 博客文章默认音乐, 优先级: 1.文章头mp3参数> 2.在这里配置
-mp3: http://link.hhtjim.com/163/425570952.mp3
-# 首页封面图, 优先级: 1.在这里配置> 2.文章头cover参数;
-welcome_cover: # /img/welcome-cover.jpg
-# 文章封面图, 优先级: 1.文章头cover参数 > 2.在这里配置
-cover: /img/cover.jpg
-# 文章目录
+# 是否显示目录
 TOC: false
 
+# 是否自动播放音乐
+autoplay: false
 
-keywords: Fechin 
+# 默认音乐
+mp3: http://link.hhtjim.com/163/425570952.mp3
+
+# 首页封面图, 为空时取文章的cover作为封面
+welcome_cover: # /img/welcome-cover.jpg
+
+# 默认文章封面图
+cover: /img/cover.jpg
+
+# Gitalk 评论插件（https://github.com/gitalk/gitalk）
+gitalk:
+    # 是否自动展开评论框
+    autoExpand: false
+    # 应用编号
+    clientID: 'a396afe529734b15300f'
+    # 应用秘钥
+    clientSecret: '0ae7c1790f9a5cbc2b7339c12a82d58fe58f9567'
+    # issue仓库名
+    repo: 'fechin.github.io'
+    # Github名
+    owner: 'Fechin'
+    # Github名
+    admin: ['Fechin']
+    # Ensure uniqueness and length less than 50
+    id: location.pathname
+    # Facebook-like distraction free mode
+    distractionFreeMode: false
+
+# 网站关键字
+keywords: Fechin
+
 # 要使用google_analytics进行统计的话，这里需要配置ID
-google_analytics: UA-69833742-2
+google_analytics: 
+
 # 网站ico
 favicon: /img/favicon.png
+
+# rss文件
 rss: atom.xml
