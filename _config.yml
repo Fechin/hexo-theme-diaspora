@@ -19,20 +19,23 @@ welcome_cover: # /img/welcome-cover.jpg
 # 默认文章封面图
 cover: /img/cover.jpg
 
+# 是否关闭默认滚动条
+scrollbar: true
+
 # Gitalk 评论插件（https://github.com/gitalk/gitalk）
 gitalk:
     # 是否自动展开评论框
     autoExpand: false
     # 应用编号
-    clientID: ''
+    clientID: 'a396afe529734b15300f'
     # 应用秘钥
-    clientSecret: ''
+    clientSecret: '0ae7c1790f9a5cbc2b7339c12a82d58fe58f9567'
     # issue仓库名
-    repo: ''
+    repo: 'fechin.github.io'
     # Github名
-    owner: ''
+    owner: 'Fechin'
     # Github名
-    admin: ['']
+    admin: ['Fechin']
     # Ensure uniqueness and length less than 50
     id: location.pathname
     # Facebook-like distraction free mode
@@ -42,7 +45,7 @@ gitalk:
 keywords: Fechin
 
 # 要使用google_analytics进行统计的话，这里需要配置ID
-google_analytics: 
+google_analytics: UA-69833742-2
 
 # 网站ico
 favicon: /img/favicon.png
