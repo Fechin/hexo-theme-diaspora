@@ -97,8 +97,12 @@ var Diaspora = {
                     break;
             }
             setTimeout(function() {
-                Diaspora.player()
-                    $('#top').show();
+                Diaspora.player();
+                $('#top').show();
+                comment = $("#gitalk-container");
+                if (comment.data('ae') == true){
+                    comment.click();
+                }
             }, 0)
         })
     },
@@ -410,8 +414,8 @@ $(function() {
                 }, 300)
                 return false;
                 break;
+            // photoswipe
             case (tag.indexOf('pimg') != -1):
-                // photoswipe
                 var pswpElement = $('.pswp').get(0);
                 if (pswpElement) {
                     var items = [];
@@ -450,10 +454,34 @@ $(function() {
                 }
                 return false;
                 break;
+              // comment
+            case - 1 != tag.indexOf("comment"): 
+                Diaspora.loading(),
+                comment = $('#gitalk-container');
+                gitalk = new Gitalk({
+                  clientID: comment.data('ci'),
+                  clientSecret: comment.data('cs'),
+                  repo: comment.data('r'),
+                  owner: comment.data('o'),
+                  admin: comment.data('a'),
+                  id: location.pathname,
+                  distractionFreeMode: comment.data('d')
+                })
+                $(".comment").removeClass("link")
+                gitalk.render('gitalk-container')
+                Diaspora.loaded();
+                return false;
+                break;
             default:
                 return true;
                 break;
         }
     })
+    // 是否自动展开评论
+    comment = $("#gitalk-container");
+    if (comment.data('ae') == true){
+        comment.click();
+    }
     console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/Fechin/hexo-theme-diaspora")
 })
+

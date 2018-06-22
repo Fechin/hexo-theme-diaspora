@@ -12,6 +12,7 @@
                 <source type="audio/mpeg" src="<%- page.mp3 || theme.mp3 %>">
             </audio>
         </div>
+        <%- partial('gitalk', {post: page}) %>
     </div>
     <% if (theme.TOC == true){ %>
       <div class='side'>

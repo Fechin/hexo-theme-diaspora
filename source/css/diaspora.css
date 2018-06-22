@@ -111,8 +111,19 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
 .stuff .likeThis {pointer-events:none;}
 .stuff .icon-like {display:none;}
 .stuff .count {color:#666;}
-.comment {margin:50px auto 0;}
+.comment {margin:50px auto;}
 .comment.link,.downloadlink {cursor:pointer;letter-spacing:5px;border:1px solid #dadada;width:170px;text-align:center;color:#666;font-size:14px;padding:10px 0;}
+.comment .gt-comments-null{display:none;}
+.comment .gt-header-textarea{border-radius:0;background: white;}
+.comment .gt-popup{margin-top:8px;}
+.comment .gt-counts a{color:black;border-bottom:0;pointer-events:none;}
+.comment .gt-avatar-github{display:none;}
+.comment .gt-header-avatar{display:none;}
+.comment .gt-header-comment{margin-left: 0;!important;}
+.comment .gt-btn-public{border-radius:0;}
+.comment .gt-btn-login{border-radius:0;}
+.comment .gt-ico-tip{display:none;}
+.comment .gt-btn-public .gt-btn-text:after{content:"（Cmd | Ctrl  + Enter）";}
 #preview {position:fixed;top:0;width:100%;height:100%;z-index:5;background:#fff;left:100%;-moz-transition:all 0.3s cubic-bezier(0,0,0.2,1);-webkit-transition:all 0.3s cubic-bezier(0,0,0.2,1);transition:all 0.3s cubic-bezier(0,0,0.2,1);overflow-y:scroll;}
 #preview.show {left:0;}
 #preview + canvas {display:none;}
@@ -216,6 +227,7 @@ pre .keyword,pre .javascript .function {color:#cc99cc;}
   .article{width:100%;}
   .article .main{width:94%;}
   .article .side {display:none}
+  .comment .gt-btn-public .gt-btn-text:after{content:"";}
 }
 @media screen and (max-width:900px) {
   #mark {height:480px;}
@@ -234,6 +246,7 @@ pre .keyword,pre .javascript .function {color:#cc99cc;}
   .article{width:100%;}
   .article .main{width:94%;}
   .article .side {display:none}
+  .comment .gt-btn-public .gt-btn-text:after{content:"";}
 }
 @media screen and (max-width:780px) {
   #header {top:40px;}
@@ -253,6 +266,7 @@ pre .keyword,pre .javascript .function {color:#cc99cc;}
   .article{width:100%;}
   .article .main{width:94%;}
   .article .side {display:none}
+  .comment .gt-btn-public .gt-btn-text:after{content:"";}
 }
 @media screen and (max-width:480px) {
   #post0 p:first-child {display:block;}
@@ -268,4 +282,6 @@ pre .keyword,pre .javascript .function {color:#cc99cc;}
   .article {width:100%;}
   .article .main{width:94%;}
   .article .side {display:none}
+  .comment .gt-btn-public .gt-btn-text:after{content:"";}
 }
+
