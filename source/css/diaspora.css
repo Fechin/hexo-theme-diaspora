@@ -124,6 +124,7 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
 .comment .gt-btn-login{border-radius:0;}
 .comment .gt-ico-tip{display:none;}
 .comment .gt-btn-public .gt-btn-text:after{content:"（Cmd | Ctrl  + Enter）";}
+.comment .gt-meta{margin:0; border:0;}
 #preview {position:fixed;top:0;width:100%;height:100%;z-index:5;background:#fff;left:100%;-moz-transition:all 0.3s cubic-bezier(0,0,0.2,1);-webkit-transition:all 0.3s cubic-bezier(0,0,0.2,1);transition:all 0.3s cubic-bezier(0,0,0.2,1);overflow-y:scroll;}
 #preview.show {left:0;}
 #preview + canvas {display:none;}
