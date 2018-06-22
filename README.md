@@ -52,34 +52,55 @@ cover: http://domain.com/awesome.jpg
 
 ### 主题配置
 ```yml
-
-# Header Menu. title: link
+# 头部菜单，title: link
 menu:
   Whoami: /whoami
   Github: https://github.com/Fechin
   Twitter: https://twitter.com/FechinLi
 
+# 是否显示目录
+TOC: false
 
-# 查看文章时是否自动播放音乐
+# 是否自动播放音乐
 autoplay: false
-# 博客文章默认音乐, 优先级: 1.文章头mp3参数> 2.在这里配置
+
+# 默认音乐
 mp3: http://link.hhtjim.com/163/425570952.mp3
-# 首页封面图, 优先级: 1.在这里配置> 2.文章头cover参数;
+
+# 首页封面图, 为空时取文章的cover作为封面
 welcome_cover: # /img/welcome-cover.jpg
-# 文章封面图, 优先级: 1.文章头cover参数 > 2.在这里配置
+
+# 默认文章封面图
 cover: /img/cover.jpg
 
+# Gitalk 评论插件（https://github.com/gitalk/gitalk）
+gitalk:
+    # 是否自动展开评论框
+    autoExpand: false
+    # 应用编号
+    clientID: ''
+    # 应用秘钥
+    clientSecret: ''
+    # issue仓库名
+    repo: ''
+    # Github名
+    owner: ''
+    # Github名
+    admin: ['']
+    # Ensure uniqueness and length less than 50
+    id: location.pathname
+    # Facebook-like distraction free mode
+    distractionFreeMode: false
 
+# 网站关键字
 keywords: Fechin
+
 # 要使用google_analytics进行统计的话，这里需要配置ID
 google_analytics: 
+
 # 网站ico
 favicon: /img/favicon.png
+
+# rss文件
 rss: atom.xml
 ```
-
-### 更新日志
-- 23 Sep 2016 项目启动
-- 13 Oct 2016 V1.0发布
-- 6 Mar 2018 版权信息，封面图优化
-- Apr 6, 2018 集成PhotoSwipe图片插件
