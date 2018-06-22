@@ -24,15 +24,15 @@ gitalk:
     # 是否自动展开评论框
     autoExpand: false
     # 应用编号
-    clientID: 'a396afe529734b15300f'
+    clientID: ''
     # 应用秘钥
-    clientSecret: '0ae7c1790f9a5cbc2b7339c12a82d58fe58f9567'
+    clientSecret: ''
     # issue仓库名
-    repo: 'fechin.github.io'
+    repo: ''
     # Github名
-    owner: 'Fechin'
+    owner: ''
     # Github名
-    admin: ['Fechin']
+    admin: ['']
     # Ensure uniqueness and length less than 50
     id: location.pathname
     # Facebook-like distraction free mode
