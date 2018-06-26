@@ -333,7 +333,7 @@ $(function() {
                     }
                     var tempScrollTop = $(window).scrollTop();
                     $('#primary').append($(data).find('.post'))
-                    $(window).scrollTop(tempScrollTop);
+                    $(window).scrollTop(tempScrollTop + 100);
                     Diaspora.loaded()
                     $('html,body').animate({ scrollTop: tempScrollTop + 400 }, 500);
                 }, function() {
