@@ -85,7 +85,7 @@ html.mu {height:100%;}
 body.mu .icon-menu {color:#333;}
 body.mu .icon-menu:before {content:"\e607";}
 body.mu .nav {top:0;}
-body.mu .icon-logo {color:#333;}
+body.mu .icon-logo {color:#333;background: none;}
 .menu {text-align:center;margin-top:200px;}
 .menu li {font-size:20px;display:inline-block;margin:0 20px 20px 0;}
 .menu a {color:#666;letter-spacing:1px;}
