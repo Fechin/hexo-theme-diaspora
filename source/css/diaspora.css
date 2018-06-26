@@ -82,10 +82,10 @@ body.touch .scrollbar {display:none;}
 .nav {position:fixed;height:100%;width:100%;background:rgba(255,255,255,.97);z-index:3;top:-100%;-webkit-transition:top 0.3s cubic-bezier(0.4,0,0.2,1);-moz-transition:top 0.3s cubic-bezier(0.4,0,0.2,1);transition:top 0.3s cubic-bezier(0.4,0,0.2,1);}
 body.mu {overflow:hidden;height:100%;}
 html.mu {height:100%;}
-body.mu .icon-menu {color:#333;}
+body.mu .icon-menu {color:#333;background: none;}
 body.mu .icon-menu:before {content:"\e607";}
 body.mu .nav {top:0;}
-body.mu .icon-logo {color:#333;background: none;}
+body.mu .icon-logo {color:#333;}
 .menu {text-align:center;margin-top:200px;}
 .menu li {font-size:20px;display:inline-block;margin:0 20px 20px 0;}
 .menu a {color:#666;letter-spacing:1px;}
