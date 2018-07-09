@@ -9,15 +9,22 @@
             <%- page.content %>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="<%- theme.autoplay || "false" %>">
-                <source type="audio/mpeg" src="<%- page.mp3 || theme.mp3 %>">
+                <source type="audio/mpeg" src="<%- page.mp3 %>">
             </audio>
+            <% if (page.mp3 == '' | page.mp3 == null){%>
+                <ul id="audio-list" style="display:none">
+                    <% for (var i in theme.mp3){ %>
+                        <li title='<%- i %>' data-url='<%- theme.mp3[i] %>'></li>
+                    <%}%>
+                </ul>
+            <%}%>
         </div>
         <%- partial('gitalk', {post: page}) %>
     </div>
     <% if (theme.TOC == true){ %>
-      <div class='side'>
-        <%- toc(page.content, {list_number: true}) %>
-      </div>
+        <div class='side'>
+            <%- toc(page.content, {list_number: true}) %>
+        </div>
     <%}%>
 </div>
 

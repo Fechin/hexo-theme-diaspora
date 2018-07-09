@@ -140,6 +140,12 @@ var Diaspora = {
         if (p.eq(0).data("autoplay") == true) {
             p[0].play();
         }
+        if (p[0].src == ''){
+            audiolist = $('#audio-list li');
+            mp3 = audiolist.eq([Math.floor(Math.random() * audiolist.size())])
+            p[0].src = mp3.data('url')
+        }
+
         p.on({
             'timeupdate': function() {
                 var progress = p[0].currentTime / p[0].duration * 100;
