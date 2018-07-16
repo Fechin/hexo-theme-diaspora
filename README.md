@@ -64,8 +64,10 @@ TOC: false
 # 是否自动播放音乐
 autoplay: false
 
-# 默认音乐
-mp3: http://link.hhtjim.com/163/425570952.mp3
+# 默认音乐（随机播放）
+mp3: 
+    - http://link.hhtjim.com/163/425570952.mp3
+    - http://link.hhtjim.com/163/425570952.mp3
 
 # 首页封面图, 为空时取文章的cover作为封面
 welcome_cover: # /img/welcome-cover.jpg
