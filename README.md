@@ -30,6 +30,8 @@ theme: diaspora
 ```
 ### 更新主题
 
+注意：请在更时主题时备份`_config.yml`配置文件
+
 ``` bash
 cd themes/diaspora
 git pull
