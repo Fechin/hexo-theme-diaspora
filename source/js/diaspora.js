@@ -137,13 +137,15 @@ var Diaspora = {
             })
             return
         }
-        if (p.eq(0).data("autoplay") == true) {
-            p[0].play();
-        }
-        if (p[0].src == ''){
+        var sourceSrc= $("#audio source").eq(0).attr('src')
+        if (sourceSrc == '' && p[0].src == ''){
             audiolist = $('#audio-list li');
             mp3 = audiolist.eq([Math.floor(Math.random() * audiolist.size())])
             p[0].src = mp3.data('url')
+        }
+
+        if (p.eq(0).data("autoplay") == true) {
+            p[0].play();
         }
 
         p.on({
