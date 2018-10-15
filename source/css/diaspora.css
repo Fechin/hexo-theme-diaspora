@@ -134,8 +134,7 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
 .article > div {width:100%;padding:30px 0;margin:0 auto;}
 .article .main {width:700px;}
 .article .side {align-self:flex-start;flex:0 0 200px;}
-.article .toc {position:fixed;top:60px;right:100px;}
-.article .toc {width:200px;padding:1em;line-height:2.3;}
+.article .toc {width:200px;height:100%;position:fixed;top:60px;right:100px;padding:1em;line-height:2.3;overflow-y:scroll;}
 .article .toc .toc-item:hover {font-weight:900;}
 .article .toc li a {display:inline-block;color:#737373;text-decoration:none;transition:color,padding 0.2s ease-in-out;}
 .article .toc li a:hover {padding-left:8px;border-left:3px solid black;}
