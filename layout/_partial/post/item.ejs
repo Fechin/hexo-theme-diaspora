@@ -4,7 +4,7 @@
     </a>
     <div class="else">
         <p><%- post.date.locale("zh-cn").format("MMMM DD, YYYY") %></p>
-        <h3><%- link_to(url_for(post.path), post.title || "Untitled", {class: "posttitle"}) %></h3>
+        <h3><%- link_to(post.path, post.title || "Untitled", {class: "posttitle"}) %></h3>
         <p><%- truncate(strip_html(post.content), {length: 80, omission: '...'}) %></p>
     </div>
 </div>

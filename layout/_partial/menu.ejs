@@ -2,7 +2,7 @@
     <ul id="menu-menu" class="menu">
         <% for (var i in theme.menu){ %>
         <li class="<%- theme.menu[i].indexOf('http') > -1 ? " " : "pview" %> menu-item menu-item-type-post_type menu-item-object-page">
-            <%- link_to(url_for(theme.menu[i].lastIndexOf('/') > 0 ? theme.menu[i] : theme.menu[i] + '/'), i, {external: true})%>
+            <%- link_to(theme.menu[i].lastIndexOf('/') > 0 ? theme.menu[i] : theme.menu[i] + '/', i, {external: true})%>
         </li>
         <%}%>
     </ul>
