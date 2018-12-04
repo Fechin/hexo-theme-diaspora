@@ -33,7 +33,10 @@ body.mu .image-logo {background-color:black;}
 #post0 {width:28%;position:absolute;top:42%;left:10%;}
 #post0 p:first-child {color:#fff;font-size:12px;}
 #post0 h2 {font-size:28px;margin-top:15px;}
-#post0 h2 a {color:#fff;}
+#post0 h2 a{position:relative;color:#fff;text-decoration:none}
+#post0 h2 a:hover{color:#fff}
+#post0 h2>a:before{content:"";position:absolute;width:100%;height:2px;bottom:0;left:0;background-color:#fff;visibility:hidden;-webkit-transform:scaleX(0);transform:scaleX(0);-webkit-transition:all .3s ease-in-out 0s;transition:all .3s ease-in-out 0s}
+#post0 h2>a:hover:before{visibility:visible;-webkit-transform:scaleX(1);transform:scaleX(1)}
 #post0 h2 + p {color:#fff;font-size:14px;margin-top:30px;}
 .post {margin:100px auto 0;width:1200px;position:relative;}
 .post > a {display:inline-block;width:680px;height:440px;overflow:hidden;position:relative;z-index:3;}
@@ -44,7 +47,10 @@ body.mu .image-logo {background-color:black;}
 .post:nth-child(even) .else {right:660px;}
 .else p:first-child {color:#999;font-size:12px;margin:80px 0 0 80px;}
 .else h3 {font-size:30px;line-height:1.1;margin:10px 100px 0 80px;}
-.else h3 a {color:#333;}
+.else h3 a{color:#333;position:relative}
+.else h3 a:hover{color:#333}
+.else h3>a:before{content:"";position:absolute;width:100%;height:2px;bottom:0;left:0;background-color:#333;visibility:hidden;-webkit-transform:scaleX(0);transform:scaleX(0);-webkit-transition:all .3s ease-in-out 0s;transition:all .3s ease-in-out 0s}
+.else h3>a:hover:before{visibility:visible;-webkit-transform:scaleX(1);transform:scaleX(1)}
 .else h3 + p {color:#555;margin:10px 100px 0 80px;font-size:14px;line-height:1.8;}
 .here {position:absolute;left:80px;bottom:80px;color:#999;font-size:13px;}
 .here span {display:inline-block;vertical-align:middle;margin-right:10px;font-family:"icomoon","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;}
