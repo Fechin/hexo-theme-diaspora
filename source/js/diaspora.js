@@ -68,7 +68,8 @@ var Diaspora = {
     HS: function(tag, flag) {
         var id = tag.data('id') || 0,
             url = tag.attr('href'),
-            title = tag.attr('title') || tag.text();
+            title = tag.attr('title') + " - " + $("#config-title").text();
+
         if (!$('#preview').length || !(window.history && history.pushState)) location.href = url;
         Diaspora.loading()
         var state = {d: id, t: title, u: url};

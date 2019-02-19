@@ -1,7 +1,14 @@
 <%
+var title = '';
 var keywords = '';
 var description = '';
 (function() {
+    title = config.title
+    if (config.subtitle) {
+        title += ' - '
+        title += config.subtitle;
+    }
+
     if (theme.keywords) {
         keywords += theme.keywords;
         keywords += ',';
@@ -13,8 +20,9 @@ var description = '';
         description += config.description;
         description += ',';
     }
-    if  (is_post()) {
+    if  (is_post() || is_page()) {
         description += truncate(strip_html(page.content), {length: 100, omission: ','});
+        title = page.title + ' - ' + config.title
     }
 })();
 %>
@@ -24,8 +32,7 @@ var description = '';
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title><%= config.title %><% if (config.subtitle){ %> - <%- config.subtitle %><%}%></title>
-
+    <title><%= title %></title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
@@ -36,4 +43,14 @@ var description = '';
     <% if (theme.favicon){ %><link rel="icon" href="<%- url_for(theme.favicon) %>"> <% } %>
     <%- css(['//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css'])%>
     <%- css(['css/diaspora.css'])%>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
 </head>
