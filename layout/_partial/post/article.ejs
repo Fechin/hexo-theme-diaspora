@@ -8,7 +8,7 @@
         <div class="content markdown">
             <%- page.content %>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="<%- theme.autoplay || "false" %>">
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="<%- theme.autoplay || page.autoplay || "false" %>">
                 <source type="audio/mpeg" src="<%- page.mp3 %>">
             </audio>
             <% if (page.mp3 == '' | page.mp3 == null){%>
