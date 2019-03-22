@@ -20,10 +20,7 @@ var description = '';
         description += config.description;
         description += ',';
     }
-    if  (is_post() || is_page()) {
-        description += truncate(strip_html(page.content), {length: 100, omission: ','});
-        title = page.title + ' - ' + config.title
-    }
+    description += truncate(strip_html(page.content), {length: 100, omission: ','});
 })();
 %>
 <!DOCTYPE html>
