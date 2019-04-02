@@ -306,8 +306,8 @@ $(function() {
     $('body').on('click', function(e) {
         var tag = $(e.target).attr('class') || '',
             rel = $(e.target).attr('rel') || '';
-        // .content > p > img
-        if (e.target.nodeName == "IMG" && $(e.target).parent().get(0).nodeName == "P") {
+        // .content > ... > img
+        if (e.target.nodeName == "IMG" && $(e.target).parents('div.content').length > 0) {
             tag = 'pimg';
         }
         if (!tag && !rel) return;
