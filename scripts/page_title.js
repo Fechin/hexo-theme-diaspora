@@ -11,7 +11,7 @@ hexo.extend.helper.register("page_title", function () {
     }
 
     if (this.is_archive()) {
-        title = this.__("nav.articles");
+        title = this.__("nav.archive");
 
         if (this.is_month()) {
             title += ": " + this.page.year + "/" + this.page.month;
@@ -19,9 +19,9 @@ hexo.extend.helper.register("page_title", function () {
             title += ": " + this.page.year;
         }
     } else if (this.is_category()) {
-        title = this.__("nav.category") + ": " + this.page.category;
+        title = this.__("nav.category") + ": " + this.page.category + ' - ' + this.config.title;
     } else if (this.is_tag()) {
-        title = this.__("nav.tag") + ": " + this.page.tag;
+        title = this.__("nav.tag") + ": " + this.page.tag + ' - ' + this.config.title;
     } else if (this.is_post()) {
         title = this.page.title + ' - ' + this.config.title;
     }

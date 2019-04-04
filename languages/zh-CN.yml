@@ -17,3 +17,6 @@ powered_by: Powered by
 rss_feed: RSS Feed
 category: Category
 tag: Tag
+nav.category: 分类
+nav.tag: 标签
+nav.archive: 归档

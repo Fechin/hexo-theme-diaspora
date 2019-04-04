@@ -7,7 +7,7 @@
 
 > 再次感谢原作者创作出这么精美的主题 [@Loeify](https://github.com/LoeiFy/Diaspora) 。如果你喜欢，请捐助原作者。
 
-![cover](http://odwjyz4z6.bkt.clouddn.com/Diaspora.jpg)
+![cover](https://fech.in/static/images/Diaspora.jpg)
 
 
 ### 安装主题
@@ -44,13 +44,45 @@ git pull
 ---
 title: My awesome title
 date: 2016-10-12 18:38:45
+categories: 
+    - 分类1
+    - 分类2
 tags: 
-- 标签
-- 标签
+    - 标签1
+    - 标签2
 mp3: http://domain.com/awesome.mp3
 cover: http://domain.com/awesome.jpg
 ---
 ```
+
+### 创建分类页
+1 新建一个页面，命名为 categories 。命令如下：
+```
+hexo new page categories
+```
+2 编辑刚新建的页面，将页面的类型设置为 categories
+```
+title: 分类
+date: 2014-12-22 12:39:04
+type: "categories"
+---
+```
+主题将自动为这个页面显示所有分类。
+
+### 创建标签页
+1 新建一个页面，命名为 tags 。命令如下：
+```
+hexo new page tags
+```
+2 编辑刚新建的页面，将页面的类型设置为 tags
+```
+title: 分类
+date: 2014-12-22 12:39:04
+type: "tags"
+---
+```
+主题将自动为这个页面显示所有标签。
+
 
 ### 主题配置
 ```yml
@@ -59,6 +91,9 @@ menu:
   Whoami: /whoami
   Github: https://github.com/Fechin
   Twitter: https://twitter.com/FechinLi
+  分类: /categories
+  归档: /archives
+  标签云: /tags
 
 # 是否显示目录
 TOC: false
@@ -108,3 +143,4 @@ favicon: /img/favicon.png
 # rss文件
 rss: atom.xml
 ```
+

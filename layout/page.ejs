@@ -6,7 +6,15 @@
         <div class="article">
             <div class="main">
                 <div class="content">
-                    <%- page.content %>
+                <% if (page.search || page.type === "search") { %>
+                    <%- partial('_partial/search') %>
+                <% } else if (page.type === "tags") { %>
+                    <%- partial('_partial/tags') %>
+                <% } else if (page.type === 'categories') { %>
+                    <%- partial('_partial/categories') %>
+                <% } else { %>
+                        <%- page.content %>
+                <% } %>
                 </div>
             </div>
         </div>
