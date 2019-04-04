@@ -188,7 +188,7 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
 /* tags style  */
 .post-tags-list {margin-top:10px;display:table;}
 .post-tags-list-item {float:left;margin-right:10px;background:rgba(102,128,153,0.075);border-radius:0;padding:2px 5px;}
-.post-tags-list-link {color:rgba(44,63,81,0.5);pointer-events:none;}
+.post-tags-list-link {color:rgba(44,63,81,0.5);}
 
 /* Post or Page content style */
 .content {margin-top:50px;font-size:15px;line-height:2;color:#232323;}

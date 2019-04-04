@@ -62,7 +62,7 @@ hexo new page categories
 ```
 2 编辑刚新建的页面，将页面的类型设置为 categories
 ```
-title: 分类
+title: categories
 date: 2014-12-22 12:39:04
 type: "categories"
 ---
@@ -76,7 +76,7 @@ hexo new page tags
 ```
 2 编辑刚新建的页面，将页面的类型设置为 tags
 ```
-title: 分类
+title: tags
 date: 2014-12-22 12:39:04
 type: "tags"
 ---
