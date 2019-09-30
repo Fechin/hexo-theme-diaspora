@@ -1,0 +1,30 @@
+<div id="single" class="page">
+    <div id="top">
+        <a class="icon-left image-icon" href="javascript:history.back()"></a>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div class="main">
+                <div class="content">
+                    <div class="timeline">
+                      <h2 class="timeline-title">归档: <%= site.posts.length %>篇</h2>
+                      <% var posts = site.posts.sort('date', 'desc'); %>
+                      <% for(let i = 0, year = -1; i < posts.data.length; ++i) { %>
+                        <%
+                          const psg = posts.data[i];
+                          if(psg.date.year() !== year) {
+                            year = psg.date.year();
+                        %>
+                          <h3 class="timeline-subtitle"><%= year %></h3>
+                        <% } %>
+                        <div class="timeline-item">
+                          <time><%- psg.date.format("YYYY-MM-DD") %></time>
+                          <a target="_self" href="<%- url_for(psg.path) %>"><%= psg.title %></a>
+                        </div>
+                      <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

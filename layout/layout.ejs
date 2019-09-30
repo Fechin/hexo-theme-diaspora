@@ -1,5 +1,6 @@
-<%- partial('_partial/head', null, {cache: true}) %>
+<%- partial('_partial/head') %>
 <body class="loading">
+    <span id="config-title" style="display:none"><%= config.title %></span>
     <div id="loader"></div>
     <%- body %>
 </body>

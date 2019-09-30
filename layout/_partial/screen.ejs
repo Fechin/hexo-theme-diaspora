@@ -1,4 +1,4 @@
-<% var first = site.posts.sort("date", "desc").eq(0); %>
+<% var first = page.posts.sort("date", "desc").eq(0); %>
 <div id="screen">
     <div id="mark">
         <div class="layer" data-depth="0.4">
@@ -20,7 +20,7 @@
     <% if ( first ) { %>
     <div id="post0">
         <p><%- first.date.locale("zh-cn").format("MMMM DD, YYYY") %></p>
-        <h2><%- link_to(url_for(first.path), first.title || config.title, {class: "posttitle"}) %></h2>
+        <h2><%- link_to(first.path, first.title || config.title, {class: "posttitle"}) %></h2>
         <p class="summary"><%- truncate(strip_html(first.content), {length: 60, omission: '...'}) %></p>
     </div>
     <% } %>

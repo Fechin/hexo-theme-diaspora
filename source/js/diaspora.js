@@ -68,7 +68,8 @@ var Diaspora = {
     HS: function(tag, flag) {
         var id = tag.data('id') || 0,
             url = tag.attr('href'),
-            title = tag.attr('title') || tag.text();
+            title = tag.attr('title') + " - " + $("#config-title").text();
+
         if (!$('#preview').length || !(window.history && history.pushState)) location.href = url;
         Diaspora.loading()
         var state = {d: id, t: title, u: url};
@@ -97,16 +98,20 @@ var Diaspora = {
                     break;
             }
             setTimeout(function() {
-                Diaspora.player()
-                    $('#top').show();
+                Diaspora.player();
+                $('#top').show();
+                comment = $("#gitalk-container");
+                if (comment.data('ae') == true){
+                    comment.click();
+                }
             }, 0)
         })
     },
     preview: function() {
         // preview toggle
         $("#preview").one('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
-            var left = $('#preview').css('left');
-            if (left == '0px') {
+            var previewVisible = $('#preview').hasClass('show');
+            if (!!previewVisible) {
                 $('#container').hide();
             }else{
                 $('#container').show();
@@ -133,9 +138,17 @@ var Diaspora = {
             })
             return
         }
+        var sourceSrc= $("#audio source").eq(0).attr('src')
+        if (sourceSrc == '' && p[0].src == ''){
+            audiolist = $('#audio-list li');
+            mp3 = audiolist.eq([Math.floor(Math.random() * audiolist.size())])
+            p[0].src = mp3.data('url')
+        }
+
         if (p.eq(0).data("autoplay") == true) {
             p[0].play();
         }
+
         p.on({
             'timeupdate': function() {
                 var progress = p[0].currentTime / p[0].duration * 100;
@@ -272,13 +285,13 @@ $(function() {
     }
     $(window).on('scroll', function() {
         if ($('.scrollbar').length && !Diaspora.P() && !$('.icon-images').hasClass('active')) {
-            var st = $(window).scrollTop(),
-                ct = $('.content').height();
-            if (st > ct) {
-                st = ct
-            }
-            $('.scrollbar').width((50 + st) / ct * 100 +'%')
-            if (st > 80 && window.innerWidth > 800) {
+            var wt = $(window).scrollTop(),
+                tw  = $('#top').width(),
+                dh = document.body.scrollHeight,
+                wh  = $(window).height();
+            var width = tw / (dh - wh) * wt;
+            $('.scrollbar').width(width)
+            if (wt > 80 && window.innerWidth > 800) {
                 $('.subtitle').fadeIn()
             } else {
                 $('.subtitle').fadeOut()
@@ -293,8 +306,8 @@ $(function() {
     $('body').on('click', function(e) {
         var tag = $(e.target).attr('class') || '',
             rel = $(e.target).attr('rel') || '';
-        // .content > p > img
-        if (e.target.nodeName == "IMG" && $(e.target).parent().get(0).nodeName == "P") {
+        // .content > ... > img
+        if (e.target.nodeName == "IMG" && $(e.target).parents('div.content').length > 0) {
             tag = 'pimg';
         }
         if (!tag && !rel) return;
@@ -303,6 +316,7 @@ $(function() {
             case (tag.indexOf('switchmenu') != -1):
                 window.scrollTo(0, 0)
                 $('html, body').toggleClass('mu');
+                return false;
                 break;
             // next page
             case (tag.indexOf('more') != -1):
@@ -327,8 +341,11 @@ $(function() {
                     } else {
                         $('#pager').remove()
                     }
+                    var tempScrollTop = $(window).scrollTop();
                     $('#primary').append($(data).find('.post'))
+                    $(window).scrollTop(tempScrollTop + 100);
                     Diaspora.loaded()
+                    $('html,body').animate({ scrollTop: tempScrollTop + 400 }, 500);
                 }, function() {
                     tag.html('加载更多').data('status', 'loaded')
                 })
@@ -336,11 +353,13 @@ $(function() {
                 break;
             // home
             case (tag.indexOf('icon-home') != -1):
+                $('.toc').fadeOut(100);
                 if ($('#preview').hasClass('show')) {
                     history.back();
                 } else {
-                    location.href = "/";
+                    location.href = $('.icon-home').data('url')
                 }
+                return false;
                 break;
             // qrcode
             case (tag.indexOf('icon-scan') != -1):
@@ -350,16 +369,19 @@ $(function() {
                     $('.icon-scan').addClass('tg')
                     $('#qr').qrcode({ width: 128, height: 128, text: location.href}).toggle()
                 }
+                return false;
                 break;
             // audio play
             case (tag.indexOf('icon-play') != -1):
                 $('#audio')[0].play()
                 $('.icon-play').removeClass('icon-play').addClass('icon-pause')
+                return false;
                 break;
             // audio pause
             case (tag.indexOf('icon-pause') != -1):
                 $('#audio')[0].pause()
                 $('.icon-pause').removeClass('icon-pause').addClass('icon-play')
+                return false;
                 break;
             // history state
             case (tag.indexOf('cover') != -1):
@@ -382,16 +404,32 @@ $(function() {
                 Diaspora.HS($(e.target), 'replace')
                 return false;
                 break;
+            // toc
+            case (tag.indexOf('toc-text') != -1 || tag.indexOf('toc-link') != -1
+                  || tag.indexOf('toc-number') != -1):
+                hash = '';
+                if (e.target.nodeName == 'SPAN'){
+                  hash = $(e.target).parent().attr('href')
+                }else{
+                  hash = $(e.target).attr('href')
+                }
+                to  = $("a.headerlink[href='" + hash + "']")
+                $("html,body").animate({
+                  scrollTop: to.offset().top - 50
+                }, 300);
+                return false;
+                break;
             // quick view
             case (tag.indexOf('pviewa') != -1):
                 $('body').removeClass('mu')
                 setTimeout(function() {
                     Diaspora.HS($(e.target), 'push')
+                    $('.toc').fadeIn(1000);
                 }, 300)
                 return false;
                 break;
+            // photoswipe
             case (tag.indexOf('pimg') != -1):
-                // photoswipe
                 var pswpElement = $('.pswp').get(0);
                 if (pswpElement) {
                     var items = [];
@@ -430,10 +468,34 @@ $(function() {
                 }
                 return false;
                 break;
+              // comment
+            case - 1 != tag.indexOf("comment"): 
+                Diaspora.loading(),
+                comment = $('#gitalk-container');
+                gitalk = new Gitalk({
+                  clientID: comment.data('ci'),
+                  clientSecret: comment.data('cs'),
+                  repo: comment.data('r'),
+                  owner: comment.data('o'),
+                  admin: comment.data('a'),
+                  id: decodeURI(window.location.pathname),
+                  distractionFreeMode: comment.data('d')
+                })
+                $(".comment").removeClass("link")
+                gitalk.render('gitalk-container')
+                Diaspora.loaded();
+                return false;
+                break;
             default:
                 return true;
                 break;
         }
     })
+    // 是否自动展开评论
+    comment = $("#gitalk-container");
+    if (comment.data('ae') == true){
+        comment.click();
+    }
     console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/Fechin/hexo-theme-diaspora")
 })
+

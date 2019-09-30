@@ -17,3 +17,6 @@ powered_by: Powered by
 rss_feed: RSS Feed
 category: Category
 tag: Tag
+nav.category: Category
+nav.tag: Tag
+nav.archive: Archive
