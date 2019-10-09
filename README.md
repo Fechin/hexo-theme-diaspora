@@ -112,6 +112,9 @@ welcome_cover: # /img/welcome-cover.jpg
 # 默认文章封面图
 cover: /img/cover.jpg
 
+# 是否使用mathjax
+mathjax: false
+
 # Gitalk 评论插件（https://github.com/gitalk/gitalk）
 gitalk:
     # 是否自动展开评论框

@@ -21,6 +21,9 @@ welcome_cover: # /img/welcome-cover.jpg
 # 默认文章封面图
 cover: /img/cover.jpg
 
+# 是否使用mathjax
+mathjax: false
+
 # 是否关闭默认滚动条
 scrollbar: true
 
