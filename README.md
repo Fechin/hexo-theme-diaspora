@@ -13,7 +13,7 @@
 ### 安装主题
 
 ``` bash
-$ git clone https://github.com/Fechin/hexo-theme-diaspora.git diaspora
+$ git clone https://github.com/Fechin/hexo-theme-diaspora.git themes/diaspora
 ```
 
 
