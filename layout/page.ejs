@@ -6,7 +6,7 @@
         <div class="article">
             <div class="main">
                 <div class="content">
-                <% if (page.search || page.type === "search") { %>
+                <% if (page.type === "search") { %>
                     <%- partial('_partial/search') %>
                 <% } else if (page.type === "tags") { %>
                     <%- partial('_partial/tags') %>
