@@ -85,7 +85,7 @@ body.mu .icon-logo {color:#333;}
 .menu ul {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-ms-flex-wrap: wrap;flex-wrap: wrap;list-style-type: none;padding: 0;}
 .menu li {font-size:18px;display:inline-block;margin:0 2px 2px 0;}
 .menu li:not(:last-child) {margin-right: 5px;}
-.menu a {display: block;font-size: 20px;color: #666;text-decoration: none;padding: 5px 10px;border-bottom: .1em solid transparent;}
+.menu a {display: block;font-size: 20px;color: #666;text-decoration: none;padding: 5px;margin: auto 10px;border-bottom: .1em solid transparent;}
 .menu a:hover {color:#333; border-bottom: .1em solid #9e1900; padding-bottom: .15em; transition: 150ms ease-in-out;}
 .nav p {color:#999;font-size:12px;position:absolute;width:100%;text-align:center;bottom:30px;}
 .nav p a {color:#999;text-decoration:underline;}
