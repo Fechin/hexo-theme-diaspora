@@ -334,7 +334,7 @@ $(function() {
         target.style.left = left + "px";
         target.style.top = top + "px";
         target.style.borderColor = color;
-        target.style.borderWidth = "3px";
+        target.style.borderWidth = "2px";
         target.style.transform = "none";
       }
     }
