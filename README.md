@@ -13,7 +13,7 @@
 ### 安装主题
 
 ``` bash
-$ git clone https://github.com/Fechin/hexo-theme-diaspora.git diaspora
+$ git clone https://github.com/Fechin/hexo-theme-diaspora.git themes/diaspora
 ```
 
 
@@ -184,6 +184,9 @@ beian:
     beianInfo: 冀ICP备xxxxxxx号
     # 链接地址
     link: http://www.beian.miit.gov.cn
+
+# 是否使用mathjax
+mathjax: false
 
 # Gitalk 评论插件（https://github.com/gitalk/gitalk）
 gitalk:
