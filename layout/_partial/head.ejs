@@ -33,9 +33,9 @@ var description = '';
     <% if (config.author){ %><meta name="author" content="<%= config.author %>"> <% } %>
     <% if (theme.rss){ %><link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml"> <% } %>
     <% if (theme.favicon){ %><link rel="icon" href="<%- url_for(theme.favicon) %>"> <% } %>
-    <%- css(['//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css'])%>
+    <% if (theme.gitalk.enable){ %><%- css(['//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css'])%><%}%>
     <%- css(['css/diaspora.css'])%>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
          (adsbygoogle = window.adsbygoogle || []).push({
               google_ad_client: "ca-pub-8691406134231910",
