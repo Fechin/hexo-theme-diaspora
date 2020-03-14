@@ -11,8 +11,7 @@ autoplay: false
 
 # 默认音乐
 mp3: 
-  - http://link.hhtjim.com/163/5146554.mp3
-  - http://link.hhtjim.com/qq/001faIUs4M2zna.mp3
+  - https://raw.githubusercontent.com/WinterChenS/imgrpo/master/mp3/%E6%96%B0%E8%A3%A4%E5%AD%90-%E7%94%9F%E6%B4%BB%E5%9B%A0%E4%BD%A0%E8%80%8C%E7%81%AB%E7%83%AD.mp3
 
 # 首页封面图, 为空时取文章的cover作为封面
 welcome_cover: # /img/welcome-cover.jpg
@@ -28,25 +27,30 @@ gitalk:
     # 是否自动展开评论框
     autoExpand: false
     # 应用编号
-    clientID: ''
+    clientID: '77f2adc33e0112d086d7'
     # 应用秘钥
-    clientSecret: ''
+    clientSecret: 'e926aa3a621556609b2c2b76d89320fa524e23cd'
     # issue仓库名
-    repo: ''
+    repo: 'WinterChenS.github.io'
     # Github名
-    owner: ''
+    owner: 'WinterChenS'
     # Github名
-    admin: ['']
+    admin: ['WinterChenS']
     # Ensure uniqueness and length less than 50
     id: location.pathname
     # Facebook-like distraction free mode
     distractionFreeMode: false
+    # 是否启用快捷键提交评论(cmd|ctrl + enter)
+    enableHotKey: true
+    # 如果当前页面没有相应的 isssue 且登录的用户属于 admin，则会自动创建 issue。如果设置为 true，则显示一个初始化页面，创建 issue 需要点击 init 按钮
+    createIssueManually: true
+    
 
 # 网站关键字
 keywords: Luis
 
 # 要使用google_analytics进行统计的话，这里需要配置ID
-google_analytics: 
+google_analytics: G-30C04D6TMS 
 
 # 网站ico
 favicon: /img/favicon.png
