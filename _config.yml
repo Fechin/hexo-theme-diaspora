@@ -27,9 +27,9 @@ gitalk:
     # 是否自动展开评论框
     autoExpand: false
     # 应用编号
-    clientID: '77f2adc33e0112d086d7'
+    clientID: ''
     # 应用秘钥
-    clientSecret: 'e926aa3a621556609b2c2b76d89320fa524e23cd'
+    clientSecret: ''
     # issue仓库名
     repo: 'WinterChenS.github.io'
     # Github名
