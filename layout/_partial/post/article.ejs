@@ -14,7 +14,11 @@
             <% if (page.mp3 == '' | page.mp3 == null){%>
                 <ul id="audio-list" style="display:none">
                     <% for (var i in theme.mp3){ %>
-                        <li title='<%- i %>' data-url='<%- theme.mp3[i] %>'></li>
+                        <% if (theme.mp3[i].indexOf('http') == 0){%>
+                            <li title='<%- i %>' data-url='<%- theme.mp3[i] %>'></li>
+                        <%} else {%>
+                            <li title='<%- i %>' data-url='<%- config.root + theme.mp3[i] %>'></li>
+                        <%}%>
                     <%}%>
                 </ul>
             <%}%>
@@ -23,7 +27,7 @@
     </div>
     <% if (theme.TOC == true){ %>
         <div class='side'>
-            <%- toc(page.content, {list_number: true}) %>
+			<%- toc(page.content, {list_number: true}) %>	
         </div>
     <%}%>
 </div>

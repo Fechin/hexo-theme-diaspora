@@ -1,6 +1,6 @@
 <div class="post">
     <a href="<%- url_for(post.path) %>" title="<%- post.title || "Untitled" %>">
-        <%- image_tag(post.cover || theme.cover, {class: "cover", width: 680, height: 440}) %>
+        <%- image_tag(post.cover || theme.cover[Math.floor(Math.random() * theme.cover.length)], {class: "cover", width: 680, height: 440}) %>
     </a>
     <div class="else">
         <p><%- post.date.locale("zh-cn").format("MMMM DD, YYYY") %></p>

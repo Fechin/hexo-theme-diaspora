@@ -1,8 +1,10 @@
 # 头部菜单，title: link
 menu:
-  Whoami: /whoami
-  Github: https://github.com/Fechin
-  Twitter: https://twitter.com/FechinLi
+  首页: /
+  分类: /categories
+  标签: /tags
+  归档: /archives  
+  关于: /about
 
 # 是否显示目录
 TOC: false
@@ -10,22 +12,58 @@ TOC: false
 # 是否自动播放音乐
 autoplay: false
 
-# 默认音乐
+# 默认音乐（随机播放）
 mp3: 
-  - http://link.hhtjim.com/163/5146554.mp3
-  - http://link.hhtjim.com/qq/001faIUs4M2zna.mp3
+    - http://link.hhtjim.com/163/425570952.mp3
+    - http://link.hhtjim.com/163/425570952.mp3
 
-# 首页封面图, 为空时取文章的cover作为封面
-welcome_cover: # /img/welcome-cover.jpg
+# 首页封面图, 为空时取文章的cover作为封面(注意跨域问题,建议使用同源图片)
+welcome_cover: /img/welcome-cover.jpg
 
-# 默认文章封面图
-cover: /img/cover.jpg
+# 默认文章封面图（随机调用,支持外链）
+cover: 
+  - /img/cover.jpg
+  - /img/welcome-cover.jpg
+
+ 
+# 是否使用mathjax
+mathjax: false
+
 
 # 是否关闭默认滚动条
 scrollbar: true
 
+# 本地搜索,请将索引文件放在网站根目录,或修改主题js文件的path值
+local_search:
+    # 是否启用
+    enable: false
+
+# 是否显示 一言(hitokoto)
+hitokoto: true
+
+# 链接(可选:facebook,twitter,github,wechat,email)
+links:
+    facebook: /
+    twitter: /
+    github: /
+    wechat: /img/logo.png
+    email: mailto:xxxx@gmail.com
+  
+# 备案
+beian: 
+    # 是否显示备案信息
+    enable: true
+    # 是否在主页面最底下显示备案信息(虽然丑，但是完全满足规定要求)
+    enableFooter: false
+    # 备案号
+    beianInfo: 冀ICP备xxxxxxx号
+    # 链接地址
+    link: http://www.beian.miit.gov.cn
+
 # Gitalk 评论插件（https://github.com/gitalk/gitalk）
 gitalk:
+    # 是否启用评论功能
+    enable: false
     # 是否自动展开评论框
     autoExpand: false
     # 应用编号

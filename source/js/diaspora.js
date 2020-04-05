@@ -250,6 +250,7 @@ $(function() {
             }
             if (swatches['Vibrant']) {
                 $('.icon-menu').css('color', swatches['Vibrant'].getHex())
+				$('.icon-search').css('color', swatches['Vibrant'].getHex())
             }
         })
         if (!cover.t.attr('src')) {
@@ -303,6 +304,99 @@ $(function() {
             e.preventDefault()
         }
     })
+	
+	//搜搜
+	var searchFunc = function(path, search_id, content_id) {
+		'use strict'; //使用严格模式
+		$.ajax({
+			url: path,
+			dataType: "xml",
+			success: function( xmlResponse ) {
+				// 从xml中获取相应的标题等数据
+				var datas = $( "entry", xmlResponse ).map(function() {
+					return {
+						title: $( "title", this ).text(),
+						content: $("content",this).text(),
+						url: $( "url" , this).text()
+					};
+				}).get();
+				//ID选择器
+				var $input = document.getElementById(search_id);
+				var $resultContent = document.getElementById(content_id);
+				$input.addEventListener('input', function(){
+					var str='<ul class=\"search-result-list\">';                
+					var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+					$resultContent.innerHTML = "";
+					if (this.value.trim().length <= 0) {
+						return;
+					}
+					// 本地搜索主要部分
+					datas.forEach(function(data) {
+						var isMatch = true;
+						var content_index = [];
+						var data_title = data.title.trim().toLowerCase();
+						var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+						var data_url = data.url;
+						var index_title = -1;
+						var index_content = -1;
+						var first_occur = -1;
+						// 只匹配非空文章
+						if(data_title != '' && data_content != '') {
+							keywords.forEach(function(keyword, i) {
+								index_title = data_title.indexOf(keyword);
+								index_content = data_content.indexOf(keyword);
+								if( index_title < 0 && index_content < 0 ){
+									isMatch = false;
+								} else {
+									if (index_content < 0) {
+										index_content = 0;
+									}
+									if (i == 0) {
+										first_occur = index_content;
+									}
+								}
+							});
+						}
+						// 返回搜索结果
+						if (isMatch) {
+						//结果标签
+							str += "<li><a href='"+ data_url +"' class='search-result-title' target='_blank'>"+ data_title +"</a>";
+							var content = data.content.trim().replace(/<[^>]+>/g,"");
+							if (first_occur >= 0) {
+								// 拿出含有搜索字的部分
+								var start = first_occur - 6;
+								var end = first_occur + 6;
+								if(start < 0){
+									start = 0;
+								}
+								if(start == 0){
+									end = 10;
+								}
+								if(end > content.length){
+									end = content.length;
+								}
+								var match_content = content.substr(start, end); 
+								// 列出搜索关键字，定义class加高亮
+								keywords.forEach(function(keyword){
+									var regS = new RegExp(keyword, "gi");
+									match_content = match_content.replace(regS, "<em class=\"search-keyword\">"+keyword+"</em>");
+								})
+								str += "<p class=\"search-result\">" + match_content +"...</p>"
+							}
+						}
+					})
+					$resultContent.innerHTML = str;
+				})
+			}
+		})
+	};
+	var path = "/search.xml";
+	if(document.getElementById('local-search-input') !== null){
+		searchFunc(path, 'local-search-input', 'local-search-result');
+	}
+	
+	
+    var typed = null;
     $('body').on('click', function(e) {
         var tag = $(e.target).attr('class') || '',
             rel = $(e.target).attr('rel') || '';
@@ -315,9 +409,45 @@ $(function() {
             // nav menu
             case (tag.indexOf('switchmenu') != -1):
                 window.scrollTo(0, 0)
-                $('html, body').toggleClass('mu');
+				
+				$('html, body').toggleClass('mu');
+				if(typed !== null)
+					{typed.destroy(); typed = null;}
+				else{
+					if($("#hitokoto").data('st') == true){
+						$.get("https://v1.hitokoto.cn/", function (data) {
+						var data = data;
+						var str =  data.hitokoto + " ——  By "		
+						var options = {
+						  strings: [ 
+							//str + "Who??^1000",
+							//str + "It's me^2000",
+							//str +'Haha, make a joke',
+							str + data.from,
+						  ],
+						  typeSpeed: 90,
+						  startDelay: 500,
+						  //backDelay: 500,
+						  //backSpeed: 50,//回退速度
+						  //loop: true,
+						}
+						typed = new Typed(".hitokoto .typed", options);
+						})
+					}
+				}	
                 return false;
                 break;
+			//search	
+			case (tag.indexOf('switchsearch') != -1):
+                $('body').removeClass('mu')
+				if(typed !== null){typed.destroy(); typed = null;}
+                setTimeout(function() {
+                    Diaspora.HS($(e.target), 'push')
+                    $('.toc').fadeIn(1000);
+					searchFunc(path, 'local-search-input', 'local-search-result');
+                }, 300)
+                return false;
+                break;	
             // next page
             case (tag.indexOf('more') != -1):
                 tag = $('.more');
@@ -422,6 +552,7 @@ $(function() {
             // quick view
             case (tag.indexOf('pviewa') != -1):
                 $('body').removeClass('mu')
+				if(typed !== null){typed.destroy(); typed = null;}
                 setTimeout(function() {
                     Diaspora.HS($(e.target), 'push')
                     $('.toc').fadeIn(1000);
@@ -468,22 +599,26 @@ $(function() {
                 }
                 return false;
                 break;
-              // comment
+            // comment
             case - 1 != tag.indexOf("comment"): 
-                Diaspora.loading(),
-                comment = $('#gitalk-container');
-                gitalk = new Gitalk({
-                  clientID: comment.data('ci'),
-                  clientSecret: comment.data('cs'),
-                  repo: comment.data('r'),
-                  owner: comment.data('o'),
-                  admin: comment.data('a'),
-                  id: decodeURI(window.location.pathname),
-                  distractionFreeMode: comment.data('d')
-                })
-                $(".comment").removeClass("link")
-                gitalk.render('gitalk-container')
-                Diaspora.loaded();
+				if($('#gitalk-container').data('enable') == true){
+					Diaspora.loading(),
+					comment = $('#gitalk-container');
+					gitalk = new Gitalk({
+					  clientID: comment.data('ci'),
+					  clientSecret: comment.data('cs'),
+					  repo: comment.data('r'),
+					  owner: comment.data('o'),
+					  admin: comment.data('a'),
+					  id: decodeURI(window.location.pathname),
+					  distractionFreeMode: comment.data('d')
+					})
+					$(".comment").removeClass("link")
+					gitalk.render('gitalk-container')
+					Diaspora.loaded();
+				}else{
+					$('#gitalk-container').html("评论已关闭");
+				}
                 return false;
                 break;
             default:
@@ -496,6 +631,7 @@ $(function() {
     if (comment.data('ae') == true){
         comment.click();
     }
+		
     console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/Fechin/hexo-theme-diaspora")
 })
 

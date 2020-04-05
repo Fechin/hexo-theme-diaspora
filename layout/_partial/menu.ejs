@@ -6,10 +6,27 @@
         </li>
         <%}%>
     </ul>
+	<span class="target"></span>
+	<center>
+	<div class="hitokoto">
+		<span class="typed" id="hitokoto" data-st="<%=theme.hitokoto%>"></span>
+	</div>
+	</center>
+	
+	<p class="footerlinks">
+		<a href="#" class="iconfont icon-null"></a>
+		<% for (var i in theme.links){ %>
+            <%- link_to(theme.links[i],' ',{external: true ,class: 'iconfont icon-'+i,title:i})%>
+        <%}%>
+		<a href="#" class="iconfont icon-null"></a>
+	</p>
+	
     <p id="copyright">
         &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>.
-        Powered by <%- link_to("http://hexo.io/", "Hexo", {external: true})%>
-        Theme <%- link_to("https://github.com/Fechin/hexo-theme-diaspora", "Diaspora", {external: true})%>
-        by Fechin
+        <span> | </span>Powered by <%- link_to("https://hexo.io/", "Hexo", {external: true})%>
+        <span> | </span>Theme <%- link_to("https://github.com/Fechin/hexo-theme-diaspora", "Diaspora", {external: true})%> by Fechin
+		<% if (theme.beian.enable){ %>
+		<span> | </span><a rel="nofollow" href="<%=theme.beian.link%>" target="_blank"><%=theme.beian.beianInfo%></a>
+		<%}%>
     </p>
 </div>
