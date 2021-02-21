@@ -81,6 +81,47 @@ gitalk:
     # Facebook-like distraction free mode
     distractionFreeMode: false
 
+# Valine 评论插件（https://github.com/xCss/Valine）
+valine:
+    # 是否启用评论功能
+    enable: false
+    # 是否自动展开评论框
+    autoExpand: false
+    # 应用编号
+    appId: ''
+    # 应用秘钥
+    appKey: ''
+    # 默认文字
+    placeholder: 'Just go go'
+    # 路径path
+    path: 'window.location.pathname'
+    # 头像展示方式
+    avatar: 'identicon'
+    # 评论者相关属性
+    meta:
+        - nick
+        - mail
+        - link
+    # 每页条数
+    pageSize: 10
+    # 多语言支持
+    lang: 'zh-CN'
+    # 文章访问量统计
+    visitor: false
+    # 代码高亮
+    highlight: true
+    # 是否显示评论者ip
+    recordIP: false
+    # 设置表情包CDN
+    emojiCDN:
+    # 设置表情包映射
+    emojiMaps:
+    # 是否启用昵称框自动获取QQ昵称和QQ头像
+    enableQQ: false
+    # 设置必填项
+    requiredFields:
+        - nick
+
 # 网站关键字
 keywords: Fechin
 

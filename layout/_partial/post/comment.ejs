@@ -1,0 +1,34 @@
+<% if (theme.gitalk != undefined && theme.valine != undefined){ %>
+    <% if (theme?.valine?.enable == true){ %>
+        <div id='valine-container' class="comment link"
+            data-enable='<%=theme.valine.enable%>'
+            data-autoExpand='<%=theme.valine.autoExpand%>'
+            data-appId='<%=theme.valine.appId%>'
+            data-appKey='<%=theme.valine.appKey%>'
+            data-placeholder='<%=theme.valine.placeholder%>'
+            data-path='<%=theme.valine.path%>'
+            data-avatar='<%=theme.valine.avatar%>'
+            data-meta='<%=theme.valine.meta%>'
+            data-pageSize='<%=theme.valine.pageSize%>'
+            data-lang='<%=theme.valine.lang%>'
+            data-visitor='<%=theme.valine.visitor%>'
+            data-highlight='<%=theme.valine.highlight%>'
+            data-recordIP='<%=theme.valine.recordIP%>'
+            data-emojiCDN='<%=theme.valine.emojiCDN%>'
+            data-emojiMaps='<%=theme.valine.emojiMaps%>'
+            data-enableQQ='<%=theme.valine.enableQQ%>'
+            data-requiredFields='<%=theme.valine.requiredFields%>'
+        >查看评论</div>
+    <%}else{ %>
+        <div id='gitalk-container' class="comment link"
+            data-enable='<%=theme.gitalk.enable%>'
+            data-ae='<%=theme.gitalk.autoExpand%>'
+            data-ci='<%=theme.gitalk.clientID%>'
+            data-cs='<%=theme.gitalk.clientSecret%>'
+            data-r='<%=theme.gitalk.repo%>'
+            data-o='<%=theme.gitalk.owner%>'
+            data-a='<%=theme.gitalk.admin%>'
+            data-d='<%=theme.gitalk.distractionFreeMode%>'
+        >查看评论</div>
+    <%}%>
+<%}%>

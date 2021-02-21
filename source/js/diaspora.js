@@ -100,9 +100,13 @@ var Diaspora = {
             setTimeout(function() {
                 Diaspora.player();
                 $('#top').show();
-                comment = $("#gitalk-container");
-                if (comment.data('ae') == true){
-                    comment.click();
+                commentGitalk = $("#gitalk-container");
+                if (commentGitalk?.data('ae') == true){
+                    commentGitalk.click();
+                }
+                commentValine = $("#valine-container");
+                if (commentValine?.data('aeautoExpand') == true){
+                    commentValine.click();
                 }
             }, 0)
         })
@@ -601,7 +605,7 @@ $(function() {
                 break;
             // comment
             case - 1 != tag.indexOf("comment"): 
-				if($('#gitalk-container').data('enable') == true){
+				if($('#gitalk-container')?.data('enable') == true){
 					Diaspora.loading(),
 					comment = $('#gitalk-container');
 					gitalk = new Gitalk({
@@ -616,6 +620,28 @@ $(function() {
 					$(".comment").removeClass("link")
 					gitalk.render('gitalk-container')
 					Diaspora.loaded();
+				}else if($('#valine-container')?.data('enable') == true){
+                    Diaspora.loading(),
+					comment = $('#valine-container');
+                    valine = new Valine({
+                        el:'#valine-container',
+                        appId: comment.data('appid'),
+                        appKey: comment.data('appkey'),
+                        placeholder: comment.data('placeholder'),
+                        path: comment.data('path'),
+                        avatar: comment.data('avatar'),
+                        meta: comment.data('meta').split(/,/),
+                        pageSize: comment.data('pagesize'),
+                        lang: comment.data('lang'),
+                        visitor: comment.data('visitor'),
+                        highlight: comment.data('highlight'),
+                        recordIP: comment.data('recordip'),
+                        emojiCDN: comment.data('emojicdn'),
+                        emojiMaps: comment.data('emojimaps'),
+                        enableQQ: comment.data('enableqq'),
+                        requiredFields: comment.data('requiredfields').split(/,/)
+                    })
+					Diaspora.loaded();
 				}else{
 					$('#gitalk-container').html("评论已关闭");
 				}
@@ -627,9 +653,13 @@ $(function() {
         }
     })
     // 是否自动展开评论
-    comment = $("#gitalk-container");
-    if (comment.data('ae') == true){
-        comment.click();
+    commentGitalk = $("#gitalk-container");
+    if (commentGitalk?.data('ae') == true){
+        commentGitalk.click();
+    }
+    commentValine = $("#valine-container");
+    if (commentValine?.data('autoExpand') == true){
+        commentValine.click();
     }
 		
     console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/Fechin/hexo-theme-diaspora")
