@@ -128,6 +128,9 @@ keywords: Fechin
 # 要使用google_analytics进行统计的话，这里需要配置ID
 google_analytics: 
 
+# 要使用baidu_analytics进行统计的话，这里需要配置ID
+baidu_analytics: 
+
 # 网站ico
 favicon: /img/favicon.png
 
