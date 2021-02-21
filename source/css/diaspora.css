@@ -3,6 +3,9 @@ html {-webkit-text-size-adjust:100%;}
 html,body {-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-font-smoothing:antialiased;background:#fff;}
 body {font-family:'PingFang SC','Hiragino Sans GB','Microsoft Yahei','WenQuanYi Micro Hei',sans-serif;font-size:14px;position:relative;overflow-x:hidden;}
 body:before {background:grey;position:absolute;content:'';display:block;width:14px;height:14px;left:50%;top:50%;margin-left:-7px;margin-top:-7px;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;-webkit-animation:loading 2s ease-out forwards infinite;-moz-animation:loading 2s ease-out forwards infinite;display:none;}
+body::-webkit-scrollbar {width: 4px;}
+body::-webkit-scrollbar-thumb {border-radius: 10px;box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);background: rgba(0, 0, 0, 0.2);}
+body::-webkit-scrollbar-track {box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);border-radius: 0;background: rgba(0, 0, 0, 0.1);}
 body.loading:before {display:block;}
 @-webkit-keyframes loading {
   0% {-webkit-transform:scale(0.3);}
@@ -38,6 +41,8 @@ body.mu .image-logo {background-color:black;}
 #post0 h2 + p {color:#fff;font-size:14px;margin-top:30px;}
 .post {margin:100px auto 0;width:1200px;position:relative;}
 .post > a {display:inline-block;width:680px;height:440px;overflow:hidden;position:relative;z-index:3;}
+.post > a > img {transition: 0.2s;}
+.post > a > img:hover {transform: scale(1.05);}
 .else {position:absolute;background:#fff;text-align:left;top:20px;height:398px;width:498px;border:1px solid #eaeaea;}
 .post:nth-child(odd) {text-align:left;}
 .post:nth-child(even) {text-align:right;}
@@ -275,6 +280,7 @@ pre .keyword,pre .javascript .function {color:#cc99cc;}
   .post {width:100%;margin-top:60px;background:#fff;padding-bottom:30px;border-bottom:1px solid #eaeaea;}
   .post > a {display:block;margin:0 auto;width:100%;height:auto;}
   .post > a img {margin:0 auto;}
+  .post > a > img:hover {transform: scale(1);}
   .else {height:auto;position:static;width:100%;margin:0 auto;background:transparent;border:none;}
   .else p:first-child {margin:30px 0 0 20px;}
   .else h3 {font-size:24px;margin:10px 30px 0 20px;}
