@@ -181,16 +181,48 @@ h1.title {font-size:30px;color:#333;line-height:1.3;position:relative;font-weigh
 .icon-play:before{content:"\e65d"}
 .icon-menu:before{content:"\e623"}
 .icon-home:before{content:"\e612"}
-.icon-facebook:before{content:"\e632"}
-.icon-twitter:before{content:"\e659"}
-.icon-github:before{content:"\e64a"}
+/*.icon-facebook:before{content:"\e632"}*/
+/*.icon-twitter:before{content:"\e659"}*/
+/*.icon-github:before{content:"\e64a"}*/
 .icon-pause:before{content:"\e64c"}
 .icon-scan:before{content:"\e600"}
 .icon-search:before{content:"\e601"}
-.icon-email:before{content:"\e62d"}
+/*.icon-email:before{content:"\e62d"}*/
 .icon-like:before{content:"\e602"}
-.icon-wechat:before{content:"\e603"}
+/*.icon-wechat:before{content:"\e603"}*/
 .icon-left:before{content:"\e604"}
+
+@font-face {
+  font-family: "iconfont"; /* Project id 2609542 */
+  src: url('//at.alicdn.com/t/font_2609542_9phvm77zuvw.woff2?t=1623581069201') format('woff2'),
+       url('//at.alicdn.com/t/font_2609542_9phvm77zuvw.woff?t=1623581069201') format('woff'),
+       url('//at.alicdn.com/t/font_2609542_9phvm77zuvw.ttf?t=1623581069201') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 22px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github:before {
+  content: "\e7d1";
+}
+
+.icon-email:before {
+  content: "\e6da";
+}
+
+.icon-wechat:before {
+  content: "\e7e3";
+}
+
+.icon-twitter:before {
+  content: "\e7e2";
+}
+
 
 /* tags style  */
 .post-tags-list {margin-top:10px;display:table;}
