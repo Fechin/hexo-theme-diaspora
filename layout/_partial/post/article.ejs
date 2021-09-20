@@ -15,9 +15,9 @@
                 <ul id="audio-list" style="display:none">
                     <% for (var i in theme.mp3){ %>
                         <% if (theme.mp3[i].indexOf('http') == 0){%>
-                            <li title='<%- i %>' data-url='<%- theme.mp3[i] %>'></li>
+                            <li title="<%- i %>" data-url="<%- theme.mp3[i] %>"></li>
                         <%} else {%>
-                            <li title='<%- i %>' data-url='<%- config.root + theme.mp3[i] %>'></li>
+                            <li title="<%- i %>" data-url="<%- config.root + theme.mp3[i] %>"></li>
                         <%}%>
                     <%}%>
                 </ul>
@@ -26,7 +26,7 @@
         <%- partial('gitalk', {post: page}) %>
     </div>
     <% if (theme.TOC == true){ %>
-        <div class='side'>
+        <div class="side">
 			<%- toc(page.content, {list_number: true}) %>	
         </div>
     <%}%>
