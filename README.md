@@ -154,7 +154,12 @@ cover:
   - /img/cover.jpg
   - /img/welcome-cover.jpg
 
- 
+# 是否显示Twitter分享卡片图像(图像尺寸要求：1200*600，creatorid不需要带@符号。注意：链接必须是完整url，否则Twitter将无法读取图片信息）
+twitterpic:
+  enable: false
+  src: https://bangdream.moe/img/ident.png
+  creatorid: yourtwitteridhere
+
 # 是否关闭默认滚动条
 scrollbar: true
 

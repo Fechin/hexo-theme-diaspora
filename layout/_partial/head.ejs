@@ -34,5 +34,18 @@ var description = '';
     <% if (theme.rss){ %><link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml"> <% } %>
     <% if (theme.favicon){ %><link rel="icon" href="<%- url_for(theme.favicon) %>"> <% } %>
     <% if (theme.gitalk.enable){ %><%- css(['//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css'])%><%}%>
+    <% if(theme.twitterpic.enable){ %><meta name="twitter:image:src" content="<%- url_for(theme.twitterpic.src) %>"/><%}%>
+    <% if(theme.twitterpic.enable){ %><meta name="twitter:creator" content="@<%=theme.twitterpic.creatorid%>"/><%}%>
+    <% if(theme.twitterpic.enable){ %><meta name="twitter:card" content="summary_large_image"/><%} else {%><meta name="twitter:card" content="summary"/><%}%>
+    <meta name="twitter:title" content="<%= page_title() %>"/>
+    <% if (description) { %><meta name="twitter:description" content="<%= description %>"/><%}%>
+    <% if(theme.twitterpic.enable){ %><meta property="og:image" content="<%- url_for(theme.twitterpic.src) %>"/><%}%>
+    <% if (description && theme.twitterpic.enable) { %><meta property="og:image:alt" content="<%= description %>"/><% } %>
+    <% if(theme.twitterpic.enable){ %><meta property="og:image:width" content="1200"/><% } %>
+    <% if(theme.twitterpic.enable){ %><meta property="og:image:height" content="600"/><% } %>
+    <meta property="og:site_name" content="<%= config.title %>"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="<%= page_title() %>"/>
+    <% if (description) { %><meta property="og:description" content="<%= description %>"/><%}%>
     <%- css(['css/diaspora.css'])%>
 </head>
