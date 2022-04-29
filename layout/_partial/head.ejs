@@ -48,4 +48,5 @@ var description = '';
     <meta property="og:title" content="<%= page_title() %>"/>
     <% if (description) { %><meta property="og:description" content="<%= description %>"/><%}%>
     <%- css(['css/diaspora.css'])%>
+    <script>window.searchDbPath = "<%= url_for('/search.xml') %>";</script>
 </head>
