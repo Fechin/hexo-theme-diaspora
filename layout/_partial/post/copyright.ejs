@@ -1,0 +1,75 @@
+<div>
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong><%= __('copyright.author') %> </strong><%= config.author%></a>
+    </li>
+    <li class="post-copyright-title">
+      <strong><%= __('copyright.title') %> </strong>
+      <%- page.title%>
+    </li>
+    <li class="post-copyright-link">
+      <strong><%= __('copyright.link') %> </strong>
+      <a href="<%- url_for(page.path) %>" target="_blank" title="<%- page.title %>"><%- config.url %><%- url_for(page.path) %></a>
+    </li>
+    <li class="post-copyright-license">
+      <strong><%= __('copyright.license_title') %>  </strong>
+
+      <% if (theme.copyright.license.toUpperCase() === "CC BY"){ %>
+        <a
+          rel="license"
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank" title="Attribution 4.0 International (CC BY 4.0)"
+        >
+          CC BY 4.0
+        </a>
+
+      <% } else if (theme.copyright.license.toUpperCase() === "CC BY-SA"){ %>
+        <a
+          rel="license"
+          href="https://creativecommons.org/licenses/by-sa/4.0/"
+          target="_blank" title="Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)"
+        >
+          CC BY-SA 4.0
+        </a>
+
+      <% } else if (theme.copyright.license.toUpperCase() === "CC BY-NC"){ %>
+        <a
+          rel="license"
+          href="https://creativecommons.org/licenses/by-nc/4.0/"
+          target="_blank" title="Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)"
+        >
+          CC BY-NC 4.0
+        </a>
+
+      <% } else if (theme.copyright.license.toUpperCase() === "CC BY-NC-SA"){ %>
+        <a
+          rel="license"
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+          target="_blank" title="Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)"
+        >
+          CC BY-NC-SA 4.0
+        </a>
+
+      <% } else if (theme.copyright.license.toUpperCase() === "CC BY-ND"){ %>
+        <a
+          rel="license"
+          href="https://creativecommons.org/licenses/by-nd/4.0/"
+          target="_blank" title="Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)"
+        >
+          CC BY-ND 4.0
+        </a>
+
+      <% } else { %>
+        <a
+          rel="license"
+          href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+          target="_blank"
+          title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"
+        >
+          CC BY-NC-ND 4.0
+        </a>
+
+      <% } %>
+    </li>
+  </ul>
+<div>
