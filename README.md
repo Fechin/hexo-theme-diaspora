@@ -226,5 +226,10 @@ favicon: /img/favicon.png
 # rss文件
 rss: atom.xml
 
+# 版权信息，要使用版权信息可以在这配置并设定许可方式，可以从 https://creativecommons.org/about/cclicenses/ 查询
+copyright:
+    enable: false
+    license: "CC BY-NC-ND"
+
 ```
 
