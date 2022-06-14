@@ -5,11 +5,10 @@
         <%- partial('_partial/list', {start: 1}) %>
     </div>
     <% if (page.total > 1 && page.next_link){ %>
-    <div id="pager"><a href="<%- url_for(page.next_link) %>" class="more">加载更多</a></div>
+    <div id="pager"><a href="<%- url_for(page.next_link) %>" class="more"><%-__('load_more')%></a></div>
     <% } %>
 </div>
 <div id="preview"></div>
 <% if (theme.beian.enable && theme.beian.enableFooter){ %>
-	<center><a rel="nofollow" style="color: #666;" href="<%=theme.beian.link%>" target="_blank"><%=theme.beian.beianInfo%></a></center>
+    <center><a rel="nofollow" style="color: #666;" href="<%=theme.beian.link%>" target="_blank"><%=theme.beian.beianInfo%></a></center>
 <%}%>
-

@@ -1,5 +1,6 @@
 categories: 分類
 search: 搜尋
+search_tip: 你想找點什麼？
 tags: 標籤
 tagcloud: 標籤雲
 tweets: 推文
@@ -7,12 +8,16 @@ prev: 上一頁
 next: 下一頁
 comment: 留言
 archive_a: 彙整
-archive_b: 彙整：%s
+archive_b: 彙整：%s 篇
 page: 第 %d 頁
 recent_posts: 最新文章
 newer: 較新
 older: 較舊
 share: 分享
+load_more: 讀取更多
+play_or_pasue: 播放 / 暫停
+view_comments: 查看留言
+qrcode: 獲取 QR Code
 powered_by: Powered by
 rss_feed: RSS Feed
 category: 分類
