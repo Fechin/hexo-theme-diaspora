@@ -20,3 +20,8 @@ tag: Tag
 nav.category: Category
 nav.tag: Tag
 nav.archive: Archive
+copyright:
+    author: "Author: "
+    title: "title: "
+    link: "Link: "
+    license_title: "License: "

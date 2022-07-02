@@ -23,11 +23,14 @@
                 </ul>
             <%}%>
         </div>
+        <% if (theme.copyright.enable){ %>
+            <%- partial("_partial/copyright") %>
+        <% } %>
         <%- partial('gitalk', {post: page}) %>
     </div>
     <% if (theme.TOC == true){ %>
         <div class="side">
-			<%- toc(page.content, {list_number: true}) %>	
+            <%- toc(page.content, {list_number: true}) %>
         </div>
     <%}%>
 </div>

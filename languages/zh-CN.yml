@@ -20,3 +20,8 @@ tag: Tag
 nav.category: 分类
 nav.tag: 标签
 nav.archive: 归档
+copyright:
+    author: "作者: "
+    title: "标题: "
+    link: "链接: "
+    license_title: "版权声明: "
