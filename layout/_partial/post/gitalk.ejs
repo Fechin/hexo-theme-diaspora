@@ -1,6 +1,6 @@
 <% if (theme.gitalk != undefined){ %>
     <div id="gitalk-container" class="comment link"
-		data-enable="<%=theme.gitalk.enable%>"
+        data-enable="<%=theme.gitalk.enable%>"
         data-ae="<%=theme.gitalk.autoExpand%>"
         data-ci="<%=theme.gitalk.clientID%>"
         data-cs="<%=theme.gitalk.clientSecret%>"
@@ -8,5 +8,5 @@
         data-o="<%=theme.gitalk.owner%>"
         data-a="<%=theme.gitalk.admin%>"
         data-d="<%=theme.gitalk.distractionFreeMode%>"
-    >查看评论</div>
+    ><%-__('view_comments')%></div>
 <%}%>

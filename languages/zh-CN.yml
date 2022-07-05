@@ -1,5 +1,6 @@
 categories: 分类
 search: 搜索
+search_tip: 你想找些什么？
 tags: 标签
 tagcloud: 标签云
 tweets: 推文
@@ -7,12 +8,16 @@ prev: 上一页
 next: 下一页
 comment: 留言
 archive_a: 归档
-archive_b: 归档：%s
+archive_b: 归档：%s 篇
 page: 第 %d 页
 recent_posts: 最新文章
 newer: Newer
 older: Older
 share: Share
+load_more: 加载更多
+play_or_pasue: 播放/暂停
+view_comments: 查看留言
+qrcode: 获取二维码
 powered_by: Powered by
 rss_feed: RSS Feed
 category: Category

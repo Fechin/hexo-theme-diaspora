@@ -14,9 +14,9 @@
     <div id="header">
         <div>
             <a class="image-logo" href="/"></a>
-			<% if (theme.local_search.enable){ %>
-			<div class="iconfont icon-search switchsearch" href="<%= url_for('/search/') %>" title="搜索"></div>
-			<%}%>
+            <% if (theme.local_search.enable){ %>
+            <div class="iconfont icon-search switchsearch" href="<%= url_for('/search/') %>" title="<%-__('search')%>"></div>
+            <%}%>
             <div class="iconfont icon-menu switchmenu"></div>
         </div>
     </div>
